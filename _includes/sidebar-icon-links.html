@@ -1,15 +1,11 @@
 <nav id="sidebar-icon-links">
   {% if site.github.repo %}
     <a id="github-link"
-       class="icon" title="Github Project" aria-label="Github Project"
-       href="{{ site.github.repo }}">
+       class="icon" title="My Github" aria-label="My Github"
+       href="http://github.com/fisherra">
       {% include svg/github.svg %}
     </a>
-    <a id="github-download-link"
-       class="icon" title="Download" aria-label="Download"
-       href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">
-      {% include svg/download.svg %}
-    </a>
+
   {% endif %}
 
   <a id="subscribe-link"
@@ -40,6 +36,7 @@
     </a>
   {% endif %}
 
+<!-- 
   {% if search_page %}
     <a id="search-link"
        class="icon{% if page.url == '/search' %} active{% endif %}"
@@ -47,7 +44,7 @@
        href="{{ site.baseurl }}{{ search_page.url }}">
       {% include svg/search.svg %}
     </a>
-  {% endif %}
+  {% endif %} -->
 
   {% include custom-icon-links.html %}
 </nav>
