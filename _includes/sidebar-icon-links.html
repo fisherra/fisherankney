@@ -1,12 +1,28 @@
 <nav id="sidebar-icon-links">
-  {% if site.github.repo %}
+
     <a id="github-link"
-       class="icon" title="My Github" aria-label="My Github"
+       class="icon" title="Github" aria-label="Github"
        href="http://github.com/fisherra">
       {% include svg/github.svg %}
     </a>
 
-  {% endif %}
+    <a id="kaggle-link"
+       class="icon" title="Kaggle" aria-label="Kaggle"
+       href="http://www.kaggle.com/fisherra">
+      {% include svg/kaggle.svg %}
+    </a>
+
+    <a id="linkedin-link"
+    class="icon" title="LinkedIn" aria-label="LinkedIn"
+    href="http://www.linkedin.com/in/fisherankney/">
+   {% include svg/linkedin.svg %}
+ </a>
+
+ <!-- <a id="resume-link"
+ class="icon" title="Kaggle" aria-label="Kaggle"
+ href="{{ site.baseurl/resume/ }}">
+{% include svg/download.svg %}
+</a> -->
 
   <a id="subscribe-link"
      class="icon" title="Subscribe" aria-label="Subscribe"
@@ -14,7 +30,7 @@
     {% include svg/feed.svg %}
   </a>
 
-  {% comment %}
+  <!-- {% comment %}
     Check if we have tag or search pages page active before linking to it.
   {% endcomment %}
   {% assign tags_page = false %}
@@ -34,7 +50,7 @@
        href="{{ site.baseurl }}{{ tags_page.url }}">
       {% include svg/tags.svg %}
     </a>
-  {% endif %}
+  {% endif %} -->
 
 <!-- 
   {% if search_page %}
