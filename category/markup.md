@@ -1,6 +1,5 @@
 ---
 layout: category
-title: Projects
+title: Recent Projects
 ---
-
-Another sample category page.
+No projects yet. 

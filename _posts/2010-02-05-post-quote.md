@@ -2,7 +2,7 @@
 layout: post
 title: "Post: Quote"
 categories:
-  - Projects
+  - projects
 tags:
   - Post Formats
   - quote
