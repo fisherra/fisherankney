@@ -20,10 +20,11 @@ paginate:         5
 # paginate_path:    '/page:num'
                     # Or '/blog/page:num' if you want to move your index pages
 
-plugins:
+plugins_dir:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
+
 
 # Custom vars
 version:            3.5.3
@@ -35,3 +36,7 @@ sidebar_home_link:  true
 github:
   repo:     
   - fisherra      
+
+
+gems: 
+- jekyll-paginate
