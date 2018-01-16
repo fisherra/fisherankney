@@ -61,7 +61,8 @@ their sizes:
                              palette="Spectral")
     lower_48_mapped
 
-![](np_biodiversity_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+![]({{ site.baseurl}}/images/np_biodiversity/unnamed-chunk-3-1.png)
+
 This map reveals that most continental parks are under 1 million square
 acres in size. A few exceptionally large parks include Everglades,
 Yellowstone, Death Valley, Glacier, and Olympic. <br  /> <br  />
@@ -92,7 +93,8 @@ Which states have the most national parks?
       ) + 
       coord_flip()
 
-![](np_biodiversity_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![]({{ site.baseurl}}/images/np_biodiversity/unnamed-chunk-4-1.png)
+
 Note that Wyoming, Montana, and Idaho are grouped under a single park
 (Yellowstone), Tennesee and North Carolina are grouped under a single
 park (Great Smokey Mountains), and California and Nevada are grouped
@@ -131,7 +133,7 @@ Plant Biodiversity
       ) + 
       coord_flip()
 
-![](np_biodiversity_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+![]({{ site.baseurl}}/images/np_biodiversity/unnamed-chunk-5-1.png)
 
 <br  />
 
@@ -157,7 +159,8 @@ Animal Biodiversity
            y = "Number of Species"
       ) + coord_flip()
 
-![](np_biodiversity_files/figure-markdown_strict/unnamed-chunk-6-1.png)
+![]({{ site.baseurl}}/images/np_biodiversity/unnamed-chunk-6-1.png)
+
 
 Plant Biodiversity and National Park Size
 =========================================
@@ -188,7 +191,7 @@ Plant Biodiversity and National Park Size
                              palette="Spectral")
     plant_biodiv_mapped
 
-![](np_biodiversity_files/figure-markdown_strict/unnamed-chunk-7-1.png)
+![]({{ site.baseurl}}/images/np_biodiversity/unnamed-chunk-7-1.png)
 
 <br  />
 
@@ -225,7 +228,7 @@ Plant Biodiversity Correlation
         caption = "Source: Kaggle biodiversity dataset"
       )
 
-![](np_biodiversity_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+![]({{ site.baseurl}}/images/np_biodiversity/unnamed-chunk-8-1.png)
 
     plant_cor_value <- cor.test(plant_bio_corr$Acres, plant_bio_corr$total_div)
     plant_cor_value
@@ -275,7 +278,7 @@ Animal Biodiveristy and Park Size
                              palette="Spectral")
     animal_biodiv_mapped
 
-![](np_biodiversity_files/figure-markdown_strict/unnamed-chunk-9-1.png)
+![]({{ site.baseurl}}/images/np_biodiversity/unnamed-chunk-9-1.png)
 
 <br  />
 
@@ -312,7 +315,8 @@ Animal Biodiversity Correlation
         caption = "source: Kaggle biodiversity dataset"
       )
 
-![](np_biodiversity_files/figure-markdown_strict/unnamed-chunk-10-1.png)
+![]({{ site.baseurl}}/images/np_biodiversity/unnamed-chunk-10-1.png)
+
 
     animal_cor_value <- cor.test(animal_bio_corr$Acres, animal_bio_corr$total_div)
     animal_cor_value
