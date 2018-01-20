@@ -1,41 +1,54 @@
 ---
 layout: post
-title: "Biodiversity in U.S. National Parks"
+title: "National Park Biodiversity with ggplot2"
 categories:
   - Blog
-  - Recent Projects
 tags:
+- R
+- data visualization
+- ggplot2
 - biostatistics
 - ecology
 ---
+This is a simple exploratory data analysis on the U.S. National Park Biodiversity dataset, sourced from [kaggle](https://www.kaggle.com/nationalparkservice/park-biodiversity/data). I've been using R to investigate scientific problems for a while now, but I'm just starting to use the ggplot2 data visualization package. This is also the my first personal data science project with R! I plan on further exploring the biodiversity dataset in the future, experimenting with other graphing packages such as shiny and plotly as I do so. Stay tuned for more exciting biodiversity visualizations! 
 
-This is a simple analysis of the Biodiversity in National Parks dataset,
-and is coincidentally my first attempt at Data Science. In this project,
-I explore three simple facets of the dataset:
+This analysis exlores three simple questions about U.S. National Park Biodiversity:
 
-1.  The geographic distribution and size of the 58 U.S. National Parks
-2.  The general plant and animal biodiversity within these parks
-3.  Any existing relationship between a parks size and it's biodiversity
+1. Where are the 58 National Parks, and how big are they?
+2. Generally, which parks have the most and least plant and animal diversity?
+3. Is there any relationship between a park's size, and it's biodiversity?
 
-<br  />
 
-First let's load the R packages used in the analysis:
+### Setup 
 
     library('tidyverse')
     library('RColorBrewer')
     library('maps')
 
-<br  />
+Hadley Wickham's tidyverse includes ggplot2, tidyr, and few other great packages to make data science in R easy. I recommend checking out his book [R for Data Science](http://r4ds.had.co.nz/) to learn more. RColorBrewer provides pleasing color palettes, and maps allows for geospatial plots. 
 
-Now we must load the dataset, downloaded from:<br  />
-<https://www.kaggle.com/nationalparkservice/park-biodiversity/data>
 
-    setwd("~/Documents/data_science/np_biodiversity")
+    # setwd("~/Documents/data_science/np_biodiversity")
     parks <- read_csv("input/parks.csv")
     species <- read_csv("input/species.csv")
 
-<br  /> Plotting the locations of the continential national parks and
-their sizes:
+Here I'm reading in the biodiversity dataset, again the dataset can be downloaded for free [here](https://www.kaggle.com/nationalparkservice/park-biodiversity/data). 
+
+<br  />
+### Park Location and Size
+
+    parks_mapped <- parks %>%
+      ggplot(aes(Longitude, Latitude)) +
+      borders("state") +
+      geom_point(aes(size=Acres)) +
+      coord_quickmap()
+    parks_mapped
+
+![]({{ site.baseurl }}/images/np_biodiversity/ggplot-1.png)
+
+This is just a quick peak at the data. I create a new variable called parks_mapped, first copying the parks dataframe into it, then (%>%) calling a ggplot function. The mappings for this function are Longitude on the X axis, Latitude on the Y axis. Calling the build in borders("states") allows for a map to be projected around these points; unfortunately the borders function doesn't include Alaska and Hawaii. Next the points are plotted with their size according to how large the parks are in square acres. Coordinates are set to retain the maps ratio, and the parks\_map variable finally plotted.  
+
+Let's cut out Alaska and Hawaii, and spruce up this visualization a little bit.
 
     lower_48_mapped <- parks %>% 
       filter(State != "AK" & State != "HI") %>% 
@@ -61,15 +74,16 @@ their sizes:
                              palette="Spectral")
     lower_48_mapped
 
-![]({{ site.baseurl}}/images/np_biodiversity/unnamed-chunk-3-1.png)
+![]({{ site.baseurl}}/images/np_biodiversity/ggplot-2.png)
 
-This map reveals that most continental parks are under 1 million square
-acres in size. A few exceptionally large parks include Everglades,
-Yellowstone, Death Valley, Glacier, and Olympic. <br  /> <br  />
+To create this map, first filtered out the national parks in Alaska and Hawaii. Then use the same visualization recipe as before, but this time I added in that the color of the points should also be determined by the size of the parks. Next add labels and spruce up the legend and color pallete, then plot the new visualization. 
+
+From this visualization it is evident that most national parks are under 1 million square acres in size. The majority of national parks are found west of the Mississippi River, clumping around Utah, California, and Colorado.
 
 Which states have the most national parks?
 
-    # Create a table of number of national parks per state:
+    # Create a table of number of national parks per state
+
     parks_by_state <- parks %>%
       group_by(State) %>%
       summarise(num_of_parks = n()) %>% 
@@ -77,6 +91,7 @@ Which states have the most national parks?
       ungroup(parks_by_state)
 
     # Create a graph to show the same: 
+    
     ggplot(parks_by_state) + 
       geom_bar(aes(fct_reorder(State, num_of_parks), num_of_parks),
                stat="identity",
@@ -93,47 +108,53 @@ Which states have the most national parks?
       ) + 
       coord_flip()
 
-![]({{ site.baseurl}}/images/np_biodiversity/unnamed-chunk-4-1.png)
+![]({{ site.baseurl}}/images/np_biodiversity/ggplot-3.png)
 
-Note that Wyoming, Montana, and Idaho are grouped under a single park
-(Yellowstone), Tennesee and North Carolina are grouped under a single
-park (Great Smokey Mountains), and California and Nevada are grouped
-under a single park (Death Valley). The grouped park doesn't
-double-count towards the individual state's count, so California
-actually has 8 national parks, Wyoming has 2, Montana has 2, and Nevada
-has 2.
+Alaska earns the title of "state with the most national parks", or does it? If you look closely California appears twice in the graph, once near the top with seven national parks, but again near the bottom combined with Nevada. California has a grand total of 8 national parks, sharing the top spot with Alaska. It appears twice because in the dataset, the variable \`State\` lists all of the states the national park is in. If the park is exclusively found in california, \`State\` returns CA, if the park is found in more than one state, as is the case with Death Valley, it'll return both states: CA, NV. Yellowstone and Great Smokey Mountain national parks both return multiple states as well. 
+
 
 <br  />
 
-Plant Biodiversity
-==================
+### Plant Biodiversity Within the Parks
 
 <br  />
+
+    # Only include species that are present within the parks
+    # Also remove "national park" from each park name, it's redundant
 
     species_cleaned <- species %>%
       filter(Occurrence == "Present") %>%
       mutate(park_name = str_replace(`Park Name`, " Na.*", ""))
+
+
+    # Only include species that are algae, fungi, and plants
 
     plant_biodiv <- species_cleaned %>%
       filter(Category == "Algae" | Category == "Fungi" | Category == "Nonvascular Plant" | Category == "Vascular Plant") %>%
       group_by(park_name) %>%
       mutate(total_div = n())
 
+
+    # plot the plant biodiversity as a bar chart
+
     ggplot(plant_biodiv) + 
       geom_bar(
-        mapping = aes(x = fct_reorder(park_name, total_div), fill = Category),    
+        mapping = aes(x = fct_reorder(park_name, total_div), fill = Category),
         width = 0.8,                       
         color = "black",                 
         alpha = 0.8
       ) + 
-      labs(title="Plant Biodiversity Within U.S. National Parks",                        
+      labs(title="Plant Biodiversity Within U.S. National Parks",             
            caption="Source: Kaggle biodiversity dataset", 
            x = "National Park",
            y = "Number of Species"
       ) + 
       coord_flip()
 
-![]({{ site.baseurl}}/images/np_biodiversity/unnamed-chunk-5-1.png)
+
+![]({{ site.baseurl}}/images/np_biodiversity/ggplot-4.png)
+
+Wow, there's a lot going on here! First and foremost, the majority of every national park's plant biodiversity is vascular plants; things like flowers, ferns, trees and shrubs. 
 
 <br  />
 
