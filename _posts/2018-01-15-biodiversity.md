@@ -295,7 +295,7 @@ We've seen which parks are large, and which parks have a large variety of plants
         caption = "source: Kaggle biodiversity dataset"
       )
 
-![]({{ site.baseurl}}/images/np_biodiversity/unnamed-chunk-10-1.png)
+![]({{ site.baseurl}}/images/np_biodiversity/ggplot-8.png)
 
 Plotting the total number of animal species in a park (x-axis) against the area of the park (y-axis) allows for a scatterplot to reveal any trends relating the two. Each park is an individual point on this chart, the trend line is dotted in black. 
 
