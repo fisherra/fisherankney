@@ -513,6 +513,6 @@ that data goes to die.
 I hope you enjoyed following my own adventure in the realm of text
 mining!
 
-Untill next time,
+Until next time,
 
-- Fisher
+\- Fisher
