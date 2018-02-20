@@ -5,6 +5,7 @@ categories:
   - Blog
 tags:
 - R
+- R4DS
 - tutorial
 - import
 - export

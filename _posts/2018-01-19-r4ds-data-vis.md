@@ -4,10 +4,12 @@ title: "R4DS - Data Visualization with ggplot2"
 categories:
   - Blog
 tags:
-- r4ds
 - R
+- R4DS
 - tutorial
 - data visualization
+- plotting
+- graphs
 - ggplot2
 ---
 ### *R for Data Science Summary Series Part One*

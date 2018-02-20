@@ -164,7 +164,7 @@ markdown (.md) document using the knitr library. To change your output
 to .md, alter the YAML header of the R Markdown document to "output:
 md\_document". Save and proceed to knit the document, and boom,
 final\_analysis.md appears in your project directory along with its
-associated images.
+associated images.q
 
 Using your favorite code editor (mine is Visual Studio Code), copy the
 markdown document into the posts/ directory of your websites blog, and
