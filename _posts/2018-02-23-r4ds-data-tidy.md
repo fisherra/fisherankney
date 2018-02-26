@@ -13,6 +13,8 @@ tags:
 - tutorial
 ---
 
+<script> {{ site.baseurl }}/scatterplot-ex.jp </script>
+
 This is the fourth installment of a six-part series summarizing concepts
 from Hadley Wickham's textbook, [R for Data
 Science](http://r4ds.had.co.nz/). In the previous [blog post]( {{ site.baseurl }}/blog/2018/02/19/r4ds-data-wrangle.html) I
@@ -63,7 +65,6 @@ There are three rules to tidy data -
 3.  Each value has it's own cell <br  />
 
 ![]({{ site.baseurl }}/images/r4ds/tidy_data.png)
-
 
 Tidy data is an easy and consistent way of storing data that makes
 further analytical steps more simple. Datasets that follow the three
