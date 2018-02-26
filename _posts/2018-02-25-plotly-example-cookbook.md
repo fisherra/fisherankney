@@ -1,7 +1,7 @@
 ---
 layout: post
 categories:
-  - Blog
+  - Data Science Blog
 tags:
 - R
 - R4DS

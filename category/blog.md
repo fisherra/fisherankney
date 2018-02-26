@@ -1,4 +1,4 @@
 ---
 layout: category
-title: Blog
+title: Data Science Blog
 ---

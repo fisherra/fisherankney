@@ -2,7 +2,7 @@
 layout: post
 title: "R4DS - Wrangling Data with dplyr"
 categories:
-  - Blog
+  - Data Science Blog
 tags:
 - R
 - R4DS

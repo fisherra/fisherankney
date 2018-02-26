@@ -2,7 +2,7 @@
 layout: post
 title: "R4DS - Tidy Data with tidyr"
 categories:
-  - Blog
+  - Data Science Blog
 tags:
 - R
 - R4DS

@@ -1,11 +1,13 @@
 <nav id="sidebar-nav-links">
   {% if site.sidebar_home_link %}
-    <a style = "text-decoration:none;" class="home-link {% if page.url == '/' %} active{% endif %}"
+ <!--
+      <a style = "text-decoration:none;" class="home-link {% if page.url == '/' %} active{% endif %}"
         href="{{ site.baseurl }}/">Home</a>
   {% endif %}
+ -->
   {% if site.sidebar_blog_link %}
     <a style = "text-decoration:none;" class="page-link {% if page.url == site.sidebar_blog_link %} active{% endif %}"
-	href="{{ site.baseurl }}{{ site.sidebar_blog_link }}">Blog</a>
+	href="{{ site.baseurl }}{{ site.sidebar_blog_link }}">Data Science Blog</a>
   {% endif %}
 
   {% comment %}

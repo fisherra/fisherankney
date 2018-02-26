@@ -2,7 +2,7 @@
 layout: post
 title: "National Park Biodiversity with ggplot2"
 categories:
-  - Blog
+  - Data Science Blog
 tags:
 - R
 - data visualization

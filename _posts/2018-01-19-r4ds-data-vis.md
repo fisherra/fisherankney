@@ -2,7 +2,7 @@
 layout: post
 title: "R4DS - Data Visualization with ggplot2"
 categories:
-  - Blog
+  - Data Science Blog
 tags:
 - R
 - R4DS
