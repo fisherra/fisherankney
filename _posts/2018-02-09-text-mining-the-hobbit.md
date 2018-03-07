@@ -2,7 +2,7 @@
 layout: post
 title: "Text Mining The Hobbit"
 categories:
-  - Data Science Blog
+  - Blog
 tags:
 - R
 - tidyverse

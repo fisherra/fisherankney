@@ -2,7 +2,7 @@
 layout: post
 title: "R4DS - Handling Data with readr"
 categories:
-  - Data Science Blog
+  - Blog
 tags:
 - R
 - R4DS

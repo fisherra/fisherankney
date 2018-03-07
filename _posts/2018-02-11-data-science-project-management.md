@@ -2,7 +2,7 @@
 layout: post
 title: "Data Science Project Management"
 categories:
-  - Data Science Blog
+  - Blog
 tags:
 - R
 - Python
