@@ -3,6 +3,11 @@ layout: post
 title: "Text Mining The Hobbit"
 categories:
   - Blog
+top_tags: R
+exc: "After recently finishing J.R.R. Tolkien's *The Hobbit*, I wanted to dive
+further into Tolkien’s world by trying my hand at text mining the book
+in R. This text project is broken into three parts – a traditional word
+frequency analysis, a character analysis, and a sentiment analysis."
 tags:
 - R
 - tidyverse

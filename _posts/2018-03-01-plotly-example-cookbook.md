@@ -2,6 +2,8 @@
 layout: post
 categories:
   - Blog
+top_tags: R
+exc: "Plotly is an open source, interactive, data visualization tool that interfaces R, Matlab, and Python with web based JavaScript graphics. In this post, I dive in to setting up a plotly environment and create a variety of visualizations to showcase plotly's abilities."
 tags:
 - R
 - R4DS
@@ -12,7 +14,7 @@ tags:
 - tutorial
 ---
 
-Plotly is an open source, interactive, data visualization tool that interfaces R, Matlab, and Python with web based JavaScript graphics. Built for collaboration, plotly offers online hosting, technical support, and many visualization tools with both the free and paid subscription plans. In this post, I dive in to setting a plotly environment and create a variety of visualizations to showcase plotly's abilities. The visualization examples are inspired by, and in some cases directly copied from the eBook [Plotly for R](https://plotly-book.cpsievert.me/index.html) by Carson Sievert. Carson is an interactive data visualization powerhouse, the mastermind behind plotly, and one of my data science heroes. 
+Plotly is an open source, interactive, data visualization tool that interfaces R, Matlab, and Python with web based JavaScript graphics. Built for collaboration, plotly offers online hosting, technical support, and many visualization tools with both the free and paid subscription plans. In this post, I dive in to up setting a plotly environment and create a variety of visualizations to showcase plotly's abilities. The visualization examples are inspired by, and in some cases directly copied from the eBook [Plotly for R](https://plotly-book.cpsievert.me/index.html) by Carson Sievert. Carson is an interactive data visualization powerhouse, the mastermind behind plotly, and one of my data science heroes. 
 
 Plotly supports both online and offline functionality. If wish to forgo the tools and collaborative web support provided at <https://plot.ly/feed/>, simply install the package by following step one of the setup guide below. Plotly is still extremely useful without the online platform, this R Markdown document has been created entirely offline in RStudio. If you want access to the additional web features, follow the entire setup guide. 
 

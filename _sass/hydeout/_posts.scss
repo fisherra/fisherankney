@@ -52,7 +52,7 @@ h2.post-title, h2.page-title {
 
   opacity: 0.75;
   &:hover {
-    text-decoration: none;
+    text-decoration: none !important;
     opacity: 1;
   }
 }
@@ -64,28 +64,31 @@ h2.post-title, h2.page-title {
 .posts-list {
   padding-left: 0;
   list-style: none;
-
-  h3 {
-    margin-top: 0;
+  
+  a:hover {
+    text-decoration: none;
   }
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0;
+    }
 
-  li {
-    small {
-      font-size: 75%;
+    h4 {
+      font-size: 1rem;
       color: #999;
       white-space: nowrap;
+      margin-top: 5px;
     }
-
-    a:hover {
-      color: $link-color;
-      text-decoration: none;
-
-      small {
-        color: inherit;
-      }
+    
+    p {
+      margin-top: 0;
+      padding-top:0;
+      color: #313131;
+      margin-bottom: 50px;
     }
   }
-}
+
+
 
 button.disqus-load {
   margin-top: 1em;

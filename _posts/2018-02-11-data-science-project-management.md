@@ -3,6 +3,12 @@ layout: post
 title: "Data Science Project Management"
 categories:
   - Blog
+top_tags: General
+exc: "roper project management might sound trivial at first, but it's
+essential to keeping your projects organized, reproducable, and secure.
+Just a few moments of forethought and effort can save you hours of pain
+and regret later. Check out these tips and habits that I've found keep
+my projects in tip-top shape."
 tags:
 - R
 - Python

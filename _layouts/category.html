@@ -2,20 +2,17 @@
 layout: page
 ---
 
-{% unless page.content == '' %}
-  {{ content }}
-{% endunless %}
 
 <ul class="posts-list">
   {% assign category = page.category | default: page.title %}
   {% for post in site.categories[category] %}
-    <li>
-      <h3>
-        <a href="{{ site.baseurl }}{{ post.url }}">
-          {{ post.title }}
-          <small>{{ post.date | date_to_string }}</small>
-        </a>
-      </h3>
+
+  <li>
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        <h2> {{ post.title }} </h2>
+        <h4>  {{ post.top_tags }} | {{ post.date | date_to_long_string }} </h4>
+        <p> {{ post.exc }} </p>
+      </a>
     </li>
   {% endfor %}
 </ul>

@@ -11,9 +11,15 @@ permalink:        /:title
 author:
   name:           'Fisher Ankney'
 
-paginate:         5
-# paginate_path:    '/page:num'
+# paginate:         5
+# paginate_path:    "/blog/page:num/"
                     # Or '/blog/page:num' if you want to move your index pages
+
+
+
+
+
+
 
 plugins_dir:
   - jekyll-feed
@@ -35,3 +41,5 @@ github:
 
 gems: 
 - jekyll-paginate
+
+
