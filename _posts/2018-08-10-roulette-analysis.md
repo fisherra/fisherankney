@@ -25,7 +25,7 @@ Roulette is a simple game of chance; a ball is dropped onto a wheel with
 thrown in to further the odds in the casino's favor. The 0 and 00 slots
 are green, while the 36 numbered slots are split evenly between black
 and red. For more information on how roulette is played, check out [this
-video]().
+video](https://www.youtube.com/watch?v=BMtFBOk2ehs).
 
 I've created a short study to evaluate three roulette strategies over a
 period to practice using for-loop and if-then statements in R. In this
