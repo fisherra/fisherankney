@@ -7,8 +7,10 @@ top_tags: R
 exc: "A short study to evaluate three roulette strategies over a
 period to practice using for-loop and if-then statements in R."
 tags:
-- Data Science
-- Update
+- probability
+- simulation
+- visualization
+- project
 ---
 
 <br>
