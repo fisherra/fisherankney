@@ -4,7 +4,7 @@ title: "A Roll of the Dice"
 categories:
   - Blog
 top_tags: R
-exc: "This was rushed for my eager fans"
+exc: "Creating a function to plot the relative frequency of the results of any number of dice for any number of rolls."
 tags:
 - probability
 - simulation
@@ -16,18 +16,17 @@ tags:
 
 ### Introduction
 
-<br>
+I'm finishing up the fourth week of my master's in statistics program at Oklahoma State University. I've already learned so much about hypothesis testing, SAS (yuck), probability, and R. 
 
-While learning about probability in my master's program, we often refer
-to dice and decks of cards to simplify and familiarize sometimes complex
-ideas. I decided to bring this often used example into R to see what I
-could do with it.
+My probability course is very theoretical, but often we refer to real world examples using dice, decks of cards, and other games. 
+
+I'm constantly looking for ways to expand my knowledge of R, so I decided to take ideas surrounding probability and dice and illustrate them in R with a blog post. 
+
+So without further ado, let's load up the trusty tidyverse and get rolling!
 
 <br>
 
 ### Libraries
-
-<br>
 
     library('tidyverse')
 
@@ -35,41 +34,29 @@ could do with it.
 
 ### Rolling a Single Die
 
-<br>
+Starting off in the simplest way - I want to simulate the roll of a die using R. The base function `sample` was built for such a task. `sample` generates a random number or series of numbers within a bound you set, replacing the numbers at your discretion. If you want each roll of the die to be independent, simply set the replace argument to true. 
 
-To simulate the roll of a single die is extremely easy in R. Using the
-sample function, define a range of values and your sample size. If
-you're looking to roll more than a single die, add in the argument
-`replace = T` to command independent results.
 
     sample(1:6,1)
 
     ## [1] 4
 
-<br>
+Looks like we rolled a 4! Notice how you don't need to use the replace argument if your only sampling a single number with each use of the function. 
+
+<br> 
 
 ### Relative Frequency with a Die
 
-<br>
+Relative frequency is the fraction of outcomes in which an event occurs. The relative frequency might be equal to the probability of an event, but it might not. 
 
-relative frequency approaches probability as sample size increases.
+You would expect a die to roll each of the six possible numbers 1/6 of the time. That's the probability of each event in the sample space. 
 
-To illustrate this statement, I'll create two plots. In the first plot,
-I roll a single die 50 times, recording the outcome of each roll. Then I
-tally the numbers, and divide them by the total 50 rolls, calculating
-the relative frequencies of each of the six possible outcomes. The
-probability of each of these outcomes is 1/6, assuming a fair die. I
-mark the expected probability with a solid red line in each of the
-figures. The first relative frequency plot is titled "50 Roll Frequency
-Plot".
+The relative frequency is the number of times a die rolls a certain number, or event. 
 
-The second relative frequency plot repeats the same process, but
-increases the sample size by 3 magnitudes. The 50,000 roll figure is
-titled "50,000 Roll Frequency Plot" is created.
+Let's see the relative frequency of 50 independent rolls of a single die and see how close they are to the expected probability of 1/6. 
 
-<br>
 
-    # use the sample function to simulate 100 independent rolls of a die
+    # use the sample function to simulate 50 independent rolls of a die
     single_die_1 <- sample(1:6, 50, replace=T)
 
     # order the values into a dataframe named sd_1_freq
@@ -94,7 +81,12 @@ titled "50,000 Roll Frequency Plot" is created.
 
 ![]({{ site.baseurl}}/images/roll_em/roll_em_1.png)
 
-<br>
+The red bar denotes the expected 1/6 or 0.166 probability of each event. Some of our relative frequency results are close to their expected probability, but most are not. 
+
+Relative frequency approaches the probability as the sample size increases. 
+
+To illustrate that this is true, let's increase the sample size from 50 rolls to 50,000 rolls. 
+
 
     # use the sample function to simulate 50,000 independent rolls of a die
     single_die_2 <- sample(1:6, 50000, replace=T)
@@ -124,30 +116,22 @@ titled "50,000 Roll Frequency Plot" is created.
 
 ![]({{ site.baseurl}}/images/roll_em/roll_em_2.png)
 
+After 50,000 rolls, the relative frequency is almost exactly the expected probability. We could continue move the relative frequency closer and closer to the probability value by increasing the sample size even more. But I'll call this one 
+
 <br>
 
 ### Summing Two Dice
 
-<br>
+Have you ever played the casino game Craps? In Craps, you roll two dice and sum them to determine if you've automatically won (7 or 11), lost (2, 3, or 12) or if you need to roll again.
 
-Have you ever played the casino game Craps? In Craps, you roll two die,
-and sum them to determine if you've automatically won (7 or 11), lost
-(2, 3, or 12) or some other outcome has occurred. Let's first simulate
-summing a single roll of two dice.
-
-<br>
+So let's start by rolling two dice.
 
     sum(sample(1:6,1), sample(1:6,1))
 
     ## [1] 6
 
-<br>
 
-That was easy! So let's do it 10,000 times and plot the relative
-frequency of each result! This will give us a solid idea on the
-probabilities behind each craps bet.
-
-<br>
+That was easy! Now let's do it 10,000 times and plot the relative frequency of each result! Because our sample size will be so high (10,000), the relative frequencies should be negligibly close to the probabilities of each outcome.
 
     # create empty dataframe of 10,000 values
     roll_vector <- vector("double", 10000)
@@ -186,17 +170,10 @@ probabilities behind each craps bet.
 
 ### Generalizing with a Function
 
-<br>
+So we've recorded the relative frequency of one and two-die rolls, can we do it for a 100 die roll? How about a 10,000 Die roll? and What if I
+want to roll the die 67 times instead of 50, or 670,000 times instead of 50,000 times?
 
-So we've recorded the relative frequency of one and two-die rolls, can
-we do it for a 100 die roll? How about a 10,000 Die roll? and What if I
-want to roll the die 67 times instead of 50, or 670,000 times instead of
-50,000.
-
-To effectively create plots for an infinite number of inputs, we need to
-create a function. I'll call the function `roll_em`!
-
-<br>
+To efficiently create plots for any input, we need to create a function. I'll call the function `roll_em`!
 
     # Create the function "roll_em" to sum any number of dice for any number of rolls and produce a relative frequency plot as the output. 
 
@@ -272,16 +249,12 @@ create a function. I'll call the function `roll_em`!
     # conclude roll_em function
     }
 
-<br>
 
-That's the inner workings of my new function `roll_em()`! Let's see if
-it works!!
+Now that we've made `roll_em`, let's check to see if it works!
 
 <br>
 
 ### Testing Roll 'EM!
-
-<br>
 
 A generic entry:
 
@@ -323,15 +296,17 @@ A large number of rolls:
 
 <br>
 
-Roll 'EM works!
+Looks like `roll_em` works as we expect it to! It's tempting to put enormous inputs, 1 billion rolls of 100 billion dice, but you'll probably crash R doing it. 
 
-What a fun little project to practice making functions and better
-visualize probabilities.
+What a fun little project to practice making functions and better visualize relative frequencies. 
+
+I'm starting to work through [Hands-On Programming with R](https://d1b10bmlvqabco.cloudfront.net/attach/ighbo26t3ua52t/igp9099yy4v10/igz7vp4w5su9/OReilly_HandsOn_Programming_with_R_2014.pdf) in my free time and it looks like there are a few more casino examples coming my way. So, look forward to a blog post about playing cards and one about slot machines in the near future!
 
 <br>
 
 Until next time, <br>
 
-- Fisher
+\- Fisher
+
 
 
