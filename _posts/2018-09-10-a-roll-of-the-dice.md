@@ -4,7 +4,7 @@ title: "A Roll of the Dice"
 categories:
   - Blog
 top_tags: R
-exc: "Creating a function to plot the relative frequency of the results of any number of dice for any number of rolls."
+exc: "A short project to explore the game of craps through vizualizations of relative frequency, and change. The project culminates to creating a function to plot the relative frequency of the sum of any number of dice for any number of rolls."
 tags:
 - probability
 - simulation
