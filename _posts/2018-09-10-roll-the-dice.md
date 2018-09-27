@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Roll of the Dice"
+title: "Casino Games - Dice"
 categories:
   - Blog
 top_tags: R

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Simple Roulette Analysis"
+title: "Casino Games - Roulette"
 categories:
   - Blog
 top_tags: R
