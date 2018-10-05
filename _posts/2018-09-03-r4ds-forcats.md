@@ -2,7 +2,7 @@
 layout: post
 title: "Unpacking the Tidyverse - forcats"
 categories:
-  - Blog
+  - Blog Posts
 top_tags: R
 exc: "Factors are a way to organize
 categorical variables logically. For example, if you attempt to sort a

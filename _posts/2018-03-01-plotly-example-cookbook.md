@@ -1,7 +1,7 @@
 ---
 layout: post
 categories:
-  - Blog
+  - Blog Posts
 top_tags: R
 exc: "Plotly is an open source, interactive, data visualization tool that interfaces R, Matlab, and Python with web based JavaScript graphics. In this post, I dive in to setting up a plotly environment and create a variety of visualizations to showcase plotly's abilities."
 tags:

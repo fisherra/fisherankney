@@ -2,7 +2,7 @@
 layout: post
 title: "Unpacking the Tidyverse - stringr"
 categories:
-  - Blog
+  - Blog Posts
 top_tags: R
 exc: "Stringr manipulates character vectors using regular expressions, locales, and regular expressions. In this Unpacking the Tidyverse tutorial, I walk through how to create and manipulate strings, as well as provide useful resources on learning RegExs."
 tags:

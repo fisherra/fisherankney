@@ -2,7 +2,7 @@
 layout: post
 title: "Spatial Analysis with ggmap & tmap"
 categories:
-  - Blog
+  - Blog Posts
 top_tags: R
 exc: "Working with spatial data can have a steep learning curve, 
 but it's pretty fun once you get the hang of it. To help cement these blossoming skills, This post is dedicated to

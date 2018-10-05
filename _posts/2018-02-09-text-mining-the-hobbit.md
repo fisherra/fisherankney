@@ -2,7 +2,7 @@
 layout: post
 title: "Text Mining The Hobbit"
 categories:
-  - Blog
+  - Blog Posts
 top_tags: R
 exc: "After recently finishing J.R.R. Tolkien's *The Hobbit*, I wanted to dive
 further into Tolkien’s world by trying my hand at text mining the book

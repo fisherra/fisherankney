@@ -2,7 +2,7 @@
 layout: post
 title: "Data Science Project Management"
 categories:
-  - Blog
+  - Blog Posts
 top_tags: General
 exc: "roper project management might sound trivial at first, but it's
 essential to keeping your projects organized, reproducable, and secure.
