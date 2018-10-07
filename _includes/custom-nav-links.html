@@ -1,1 +1,19 @@
 <!-- Optional additional links to insert in sidebar nav -->
+
+<a style = "text-decoration:none;"
+ class="page-link {% if page.title == 'Profile' %} active {% endif %}"
+ href = "{{site.baseurl}}/profile">
+ Profile
+</a>
+
+<a style = "text-decoration:none;" 
+class="category-link {% if page.title == 'Blog Posts' or page.top_tags %} active{% endif %}" 
+href = "{{site.baseurl}}/blog/">
+Blog Posts
+</a> 
+
+<a style = "text-decoration:none;" 
+class="page-link {% if page.title == 'Resource Review' %} active{% endif %}" 
+href = "{{site.baseurl}}/resource-review">
+Resource Review
+</a> 
