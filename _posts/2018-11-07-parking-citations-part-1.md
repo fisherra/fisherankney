@@ -9,6 +9,7 @@ tags:
 - Python
 - EDA
 - NumPy
+- SciPy
 - Pandas
 - Open Source
 - Data Wrangling
