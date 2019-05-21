@@ -4,81 +4,180 @@ title: Data Toolbox
 sidebar_link: true
 ---
 
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+</style>
+
+
 <div style="text-align: center;">
-<h3> Content Coming Soon! </h3>
-<h2> Lorem ipsum dolor sit amet consectetur </h2>
+    <h1> Data Toolbox </h1>
 </div> 
 
 <br> 
 
-<p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius natus facilis dolorem quidem quos assumenda obcaecati fuga! Voluptate, ad? Distinctio nemo perferendis totam mollitia veniam rerum quas reiciendis optio doloribus.
-</p>
+<div style="text-align: center;">
+    <p>
+    Here you'll find short tutorials and useful code snippets on a variety of data science topics. I refer back
+    to these pages often, and thought that you might benefit from them as well!
+    </p>
+</div>
 
 <br> 
 
 
 <div style="max-height:120px; max-width:120px; margin-bottom:20px;">
         <img src="{{ site.baseurl }}/images/profile/r_logo.svg" alt="R Language" align:"left">
-</div>	
+</div>
+    
 <hr>
 
 
 <div style="text-align: center;">
-    <h3> Import / Export </h3>
+    <h3> Importing and Exporting </h3>
 </div>
 
-<ul> 
-    <li>Insert two column list of links</li>
-    <li>Insert two column list of links</li>
-    <li>Insert two column list of links</li>
-    <li>Insert two column list of links</li>
-</ul>
+<div class="row">
+    <div class="column">
+        <ul> 
+            <li>Reading and writing .csv files</li>
+            <li>Reading and writing .xls files</li>
+            <li>Reading and writing .txt files</li>
+        </ul>
+    </div>
+    <div class="column">
+        <ul> 
+            <li>The ciaro package</li>
+            <li>Saving high quality images</li> 
+            <li>Setting working directories in .rmd</li>
+        </ul>
+    </div>
+</div>
 
-<br> 
 
 <div style="text-align: center;">
-    <h3> Tidy Data</h3>
+    <h3> Tidying Data</h3>
 </div>
    
-<ul> 
-    <li>Insert two column list of links</li>
-    <li>Insert two column list of links</li>
-    <li>Insert two column list of links</li>
-    <li>Insert two column list of links</li>
-</ul>
+<div class="row">
+    <div class="column">
+        <ul> 
+            <li>tidyr - gather / spread functions</li>
+            <li>tidyr - separate / unite functions</li> 
+            <li>tidyr - complete / fill functions</li>
+        </ul>
+    </div>
+    <div class="column">
+        <ul> 
+            <li>Atomic vectors</li>
+            <li>Data structures</li>
+            <li>The tibble package</li>
+        </ul>
+    </div>
+</div>
 
 <div style="text-align: center;">
-        <h3> Data Wrangling</h3>
+    <h3> Data Wrangling</h3>
+</div>
+    
+<div class="row">
+    <div class="column">
+        <ul> 
+            <li>The forcats package</li>
+            <li>The stringr package</li>
+            <li>The lubridate package</li>
+            <li>dplyr - basic joins</li>
+            <li>dplyr - advanced joins</li>
+        </ul>
     </div>
-       
-    <ul> 
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-    </ul>
+    <div class="column">
+        <ul> 
+            <li>dplyr - filter</li>
+            <li>dplyr - arrange</li>
+            <li>dplyr - select</li>
+            <li>dplyr - mutate</li>
+            <li>dplyr - group by</li>
+        </ul>
+    </div>
+</div>
 
+
+<div style="text-align: center;">
+    <h3> Basic Programming </h3>
+</div>
+    
+<div class="row">
+    <div class="column">
+        <ul> 
+            <li>Requesting user input</li> 
+            <li>Indirectly running scripts</li>
+            <li>The purrr package</li>
+
+        </ul>
+    </div>
+    <div class="column">
+        <ul> 
+            <li>If then statements</li>
+            <li>For loops</li>
+            <li>While loops</li>
+        </ul>
+    </div>
+</div>
+            
 <div style="text-align: center;">
         <h3> Visualizations </h3>
     </div>
-        
-    <ul> 
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-    </ul>
+
+<div class="row">
+    <div class="column">
+        <ul> 
+            <li>Base R - histogram</li>
+            <li>Base R - scatterplot</li>
+            <li>Base R - boxplot</li>
+            <li>Base R - barchart</li>
+            <li>Base R - line chart</li>
+            <li>Base R - pie chart</li>
+            <li>Base R - overplotting</li>
+            <li>Base R - multiple plots</li>
+            <li>Base R - color by factor</li>
+            <li>Base R - 3D plots</li>
+            <li>Base R - legends</li>
+        </ul>
+    </div>
+    <div class="column">
+        <ul> 
+            <li>ggplot2 - geom_bar</li>
+            <li>ggplot2 - geom_boxplot</li>
+            <li>ggplot2 - geom_count</li>
+            <li>ggplot2 - geom_density</li>
+            <li>ggplot2 - geom_point</li>
+            <li>ggplot2 - geom_jitter</li>
+            <li>ggplot2 - geom_encircle</li>
+            <li>ggplot2 - correlations</li>
+            <li>ggplot2 - diverging bar</li>
+            <li>ggplot2 - gg_pie</li>
+            <li>ggplot2 - pop pyramid</li>
+        </ul>
+    </div>
+</div>
 
 <br> 
+<br>
 
 <div style="max-height:120px; max-width:120px; margin-bottom:20px;">
         <img src="{{ site.baseurl }}/images/profile/normal_curve.png" alt="R Language" align:"left">
@@ -86,76 +185,179 @@ sidebar_link: true
 <hr>
 
 <div style="text-align: center;">
-        <h3> Statistics Topic 1 </h3>
-    </div>
+    <h3> Machine Learning Fundamentals </h3>
+</div>
         
-    <ul> 
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-    </ul>
+<div class="row">
+    <div class="column">
+        <ul> 
+            <li>1</li> 
+            <li>2</li>
+            <li>3</li>
+            <li>4</li> 
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+    <div class="column">
+        <ul> 
+            <li>1</li> 
+            <li>2</li>
+            <li>3</li>
+            <li>4</li> 
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+</div>
 
 <div style="text-align: center;">
-        <h3> Statistics Topic 2 </h3>
+    <h3> Machine Learning Algorithms </h3>
+</div>    
+    
+<div class="row">
+    <div class="column">
+        <ul> 
+            <li>1</li> 
+            <li>2</li>
+            <li>3</li>
+            <li>4</li> 
+            <li>5</li>
+            <li>6</li>
+        </ul>
     </div>
+    <div class="column">
+        <ul> 
+            <li>1</li> 
+            <li>2</li>
+            <li>3</li>
+            <li>4</li> 
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+</div>
+
+<div style="text-align: center;">
+    <h3> Regression Techniques </h3>
+</div>
         
-    <ul> 
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-    </ul>
+<div class="row">
+    <div class="column">
+        <ul> 
+            <li>1</li> 
+            <li>2</li>
+            <li>3</li>
+            <li>4</li> 
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+    <div class="column">
+        <ul> 
+            <li>1</li> 
+            <li>2</li>
+            <li>3</li>
+            <li>4</li> 
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div style="text-align: center;">
+    <h3> Statistical Inference </h3>
+</div>
+    
+<div class="row">
+    <div class="column">
+        <ul> 
+            <li>1</li> 
+            <li>2</li>
+            <li>3</li>
+            <li>4</li> 
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+    <div class="column">
+        <ul> 
+            <li>1</li> 
+            <li>2</li>
+            <li>3</li>
+            <li>4</li> 
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+</div>
 
 <br> 
-<br> 
+<br>
+
 
 <div style="max-height:120px; max-width:120px; margin-bottom:20px;">
         <img src="{{ site.baseurl }}/images/profile/mysql_logo.png" alt="My SQL" align:"left">
 </div>	
 <hr>
-
-<div style="text-align: center;">
-        <h3> MySQL Topic 1 </h3>
+    
+<div class="row">
+    <div class="column">
+        <ul> 
+            <li>1</li> 
+            <li>2</li>
+            <li>3</li>
+            <li>4</li> 
+            <li>5</li>
+            <li>6</li>
+        </ul>
     </div>
-        
-    <ul> 
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-    </ul>
-
-<div style="text-align: center;">
-        <h3> MySQL Topic 2 </h3>
+    <div class="column">
+        <ul> 
+            <li>1</li> 
+            <li>2</li>
+            <li>3</li>
+            <li>4</li> 
+            <li>5</li>
+            <li>6</li>
+        </ul>
     </div>
-        
-    <ul> 
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-    </ul>
+</div>
 
+<br>
 <br> 
-<br> 
-
 
 <div style="max-height:120px; max-width:120px; margin-bottom:20px;">
         <img src="{{ site.baseurl }}/images/profile/terminal_logo.png" alt="R Language" align:"left">
 </div>	
 <hr>
 
-<div style="text-align: center;">
-        <h3> Technology Topic 1 </h3>
-    </div>
-        
-    <ul> 
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-        <li>Insert two column list of links</li>
-    </ul>
 
-<br> 
+        
+<div class="row">
+    <div class="column">
+        <ul> 
+            <li>1</li> 
+            <li>2</li>
+            <li>3</li>
+            <li>4</li> 
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+    <div class="column">
+        <ul> 
+            <li>1</li> 
+            <li>2</li>
+            <li>3</li>
+            <li>4</li> 
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+</div>
+
+<br>
 <br> 
