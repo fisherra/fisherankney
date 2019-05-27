@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SQL - create, insert, alter"
+title: "SQL - Creating Data and Structure"
 categories:
   - Blog Posts
 top_tags: General
@@ -10,17 +10,23 @@ tags:
 
 <br> 
 
-## Databases and Schema 
+## Creating Databases
 
-In MySQL there is no distinction between create database and create schema. Virtually all others (except SQLite) there is a difference. Schema collection of tables, database collection of schema. 
+In MySQL there is no distinction between a database and a schema. To my knowledge, every other flavor of SQL, except 
+for SQLite, does recognize a difference. Outside of MySQL, schema are recognized as collections of tables, and databases 
+recognized as collections of schema. 
+
+To create a new database, use either of the following examples:
 
 ``` 
 CREATE DATABASE IF NOT EXISTS example_database;
 CREATE SCHEMA IF NOT EXISTS example_schema;
 ```
 
-If using MySQL workbench, remember to refresh. These are flavored for MySQL so your results may vary if using PostgreSQL, Snowflake, Access, etc. 
+<br> 
 
+the `IF NOT EXISTS` clause is useful because it will not return an error if you re-run the SQL script. It may be useful to set a 
+default database at this point, as you won't have to define it every time you write a query. 
 
 ```
 USE example_database;
@@ -28,23 +34,27 @@ USE example_database;
 
 <br> 
 
-## Tables and Keys
+## Creating Tables and Keys
 
-creating a table and it's variables
+Creating tables is a little bit more complex than creating databases because you have to list the variable (column) names
+and types as you create the table. Here's an example table with four common variables. Notice the primary key is set upon 
+creation of this table. 
 
 ```
 CREATE TABLE example_table {
   purchase_num INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(255),
-  item_code VARCHAR(10),
-  date_of_purchase DATE NOT NULL,
+  date_of_purchase DATEL,
   price NUMERIC(10,2),
 };
 ```
 
 <br>
 
-another way to set keys
+A primary key is a unique identifier for a table, each table you create must have a primary key and a foreign key to be linked
+to another table. 
+
+A second way to create a key is as follows:
 
 ```
 CREATE TABLE example_table_2 { 
@@ -57,8 +67,7 @@ CREATE TABLE example_table_2 {
 
 <br>
 
-final way to set up keys
-
+Finally, here's a third, post-hoc way to add keys to a table. 
 
 ```
 CREATE TABLE example_table_3 { 
@@ -73,28 +82,35 @@ ALTER TABLE example_table_3
   PRIMARY KEY (customer_id)
 
 ALTER TABLE example_table_3
-  ADD FOREIGN KEY (name) REFERENCES example_table (name) ON DELETE CASCADE;
+  ADD FOREIGN KEY (name) REFERENCES example_table (name);
 ```
 
 <br>
 
-## Variables
+## Variables Explained
 
-http://www-db.deis.unibo.it/courses/TW/DOCS/w3schools/sql/sql_datatypes_general.asp.html
+When creating tables, you're expected to also create the columns of that table, and their respective data types. 
+The syntax is already shown above, so here's a list of the most useful datatypes.
 
-strings - char (short), varchar (long), enum (basically factors) <br> 
-integers - tinyint, smallint, mediumint, int, bigint (differences in storage) <br>
-fixed - decimal(5,3) = 10.523 = numeric <br> 
-float - float(5,3) = 10.523, double = longer and more storage <br> 
-date / time / date-time / binary / factors, timestamp is exact moment <br> 
-blog - binary large objects (.doc, .jpeg, etc) <br> 
+
+Strings - `CHAR(SIZE)` (short and fixed length), `VARCHAR(SIZE)` (long, variable length) <br> 
+Integers - `tinyint`, `smallint`, `mediumint`, `int`, `bigint` <br>
+Numerics - `FLOAT(5,3)` (accepts values like 10.523) <br> 
+Boolean - N/A in MySQL, but `BOOLEAN` in PostgreSQL <br> 
+Date-Times - `DATE` / `TIME` / `TIMESTAMP` <br>
+Binary Large OBject (BLOB) - `varbinary(MAX)` (image), more type possible <br>
+
 
 <br> 
 
 
-## Insert
+## Inserting Data (adding rows)
 
-Single entry, match the types!
+You can populate tables one value at a time, or all at once. Also notice that `NULL` is the 
+acceptable entry for data that is not available. 
+
+
+Single entry with NULL:
 
 ```
 INSERT INTO my_table VALUES (999, NULL, 'John', 'Wick');
@@ -102,7 +118,8 @@ INSERT INTO my_table VALUES (999, NULL, 'John', 'Wick');
 
 <br>
 
-many entries
+
+Multiple entries:
 
 ```
 INSERT INTO bookings (bookid, facid, memid, starttime, slots) VALUES
@@ -118,9 +135,10 @@ INSERT INTO bookings (bookid, facid, memid, starttime, slots) VALUES
 
 <br> 
 
-## add / alter column
+## Adding and Changing Columns
 
-add new row- 
+If you forgot to create a variable for your table when you created it, you can add it after-the-fact. In this example I add
+a new column named email, which is a variable length string. 
 
 ```
 ALTER TABLE example_table
@@ -129,13 +147,16 @@ ALTER TABLE example_table
 
 <br> 
 
-alter existing row - 
+If want to change an existing column, use the alter function twice:
 
 ```
 ALTER TABLE example_table
   ALTER COLUMN column_name NEW_DATA_TYPE;
 ```
 
+<br> 
+
+That's all for now!
 
 <br> 
 <br> 
