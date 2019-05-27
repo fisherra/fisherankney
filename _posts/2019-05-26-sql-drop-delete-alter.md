@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SQL - drop and delete"
+title: "SQL - Deleting Data and Structure"
 categories:
   - Blog Posts
 top_tags: General
@@ -56,6 +56,21 @@ Deleting many hypothetical rows:
 DELETE FROM example_table
   WHERE
     start_date <= '2015-01-01'
+```
+
+<br> 
+
+## Deleting Values
+
+If you want to replace a value with null (or another value for that matter), use the `UPDATE` function. In this example, I replace all zeros with NULL. 
+
+```
+UPDATE
+  example_table
+SET
+  value = NULL 
+WHERE
+  value = 0
 ```
 
 <br>
