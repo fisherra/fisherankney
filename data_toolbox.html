@@ -39,86 +39,90 @@ sidebar_link: true
 </div>
 
 <br> 
-<br> 
 
 <div style="max-height:120px; max-width:120px; margin-bottom:20px;">
-    <img src="{{ site.baseurl }}/images/profile/normal_curve.png" alt="R Language" align:"left">
+    <img src="{{ site.baseurl }}/images/profile/sql.png" alt="SQL" align:"left">
 </div>	
 <hr>
 
 <div style="text-align: center;">
-    <h3> Statistical Inference with R </h3>
+    <h3> Fundamentals </h3>
 </div>
-        
+
 <div class="row">
-    <div class="column">
-        <ul> 
-            <li>Z-test</li> 
-            <li>t-test</li>
-            <li>F-test</li>
-            <li>Chi-square test</li> 
-            <li>Goodness of Fit test</li>
-            <li>Wilcoxon Rank Sum test</li>
-            <li>Wilcoxon Signed Rank test</li>
-            <li>ANOVA</li>
-            <li>ANCOVA</li>
-
-
-        </ul>
-    </div>
-    <div class="column">
-        <ul> 
-            <li>Bootstrapping</li>
-            <li>Cross Validation</li> 
-            <li>Jackknife Resampling</li>
-            <li>The Central Limit Theorem</li> 
-            <li>The Law of Large Numbers</li> 
-            <li>Probability Distributions</li>
-            <li>Statistical Significance</li>
-            <li>Statistical Power</li>
-            <li>Hypotheses</li>
-
-        </ul>
-    </div>
+<div class="column">
+    <ul> 
+        <li>
+            <a href = '{{ site.baseurl }}/sql-create-insert-alter'>Creating Data and Structure</a>
+        </li> 
+        <li>
+            <a href = '{{ site.baseurl }}/sql-drop-delete-alter'>Deleting Data and Structure</a>
+        </li>
+        <li>
+            <a href = '{{ site.baseurl }}/sql-filter-columns'>Filtering Columns</a>
+        </li>
+        <li>
+            <a href = '{{ site.baseurl }}/sql-filter-rows'>Filtering Rows</a>
+        </li>
+        <li>
+            <a href = '{{ site.baseurl }}/sql-aggregate-functions'>Aggregate Functions</a>
+        </li>
+        <li>
+            <a href = '{{ site.baseurl }}/sql-resources'>More Resources</a>
+        </li>
+    </ul>
+</div>
+<div class="column">
+    <ul> 
+        <li>Union</li> 
+        <li>Joins</li>
+        <li>Subqueries</li>
+        <li>Strings</li> 
+        <li>Dates</li>
+        <li>SQL Theory</li>
+    </ul>
+</div>
 </div>
 
+
+<br> 
+<br> 
+
+<!--
+
+<div style="max-height:120px; max-width:120px; margin-bottom:20px;">
+    <img src="{{ site.baseurl }}/images/profile/python_logo.png" alt="SQL" align:"left">
+</div>	
+<hr>
 
 <div style="text-align: center;">
-    <h3> Linear Regression with R </h3>
+    <h3> Task Automation </h3>
 </div>
-        
+
 <div class="row">
     <div class="column">
         <ul> 
-            <li>Assumptions</li> 
-            <li>Diagnostics</li>
-            <li>Coefficients</li>
-            <li>Multicollinearity</li>
-            <li>The lm function</li>
-        </ul>
+            <li>Task 1</li> 
+            <li>Task 2</li>
+            <li>Task 3</li>
+
     </div>
     <div class="column">
         <ul> 
-            <li>Interactions</li> 
-            <li>Polynomials</li>
-            <li>Connection to ANOVA</li>
-            <li>Sums of Squares</li>
-            <li>Extra Sums of Squares</li>
+            <li>Task 4</li>
+            <li>Task 5</li> 
+            <li>Task 6</li>
         </ul>
     </div>
 </div>
-    
-<br> 
+
 <br>
-
-
+--> 
 
 <div style="max-height:120px; max-width:120px; margin-bottom:20px;">
         <img src="{{ site.baseurl }}/images/profile/r_logo.svg" alt="R Language" align:"left">
 </div>
-    
 <hr>
-
 
 <div style="text-align: center;">
     <h3> Handling Data </h3>
@@ -128,17 +132,16 @@ sidebar_link: true
     <div class="column">
         <ul> 
             <li>
-                <a href = '{{ site.baseurl }}/r-lang-read-write-csv'>Reading and Writing Deliminated Files</a>
+                <a href = '{{ site.baseurl }}/r-lang-read-write-csv'>Read / Write .csv Files</a>
             </li>
-            <li>Reading and Writing .xls Files</li>
-            <li>Reading and writing .txt Files</li>
+            <li>Read / Write .xlsx Files</li>
+            <li>Read / Write .txt Files</li>
         </ul>
     </div>
     <div class="column">
         <ul> 
+            <li>Working Directories (in .rmd)</li>
             <li>The Cairo Package</li>
-            <li>Saving High Quality Images</li> 
-            <li>Setting Working Directories in .rmd</li>
         </ul>
     </div>
 </div>
@@ -207,8 +210,8 @@ sidebar_link: true
     <div class="column">
         <ul> 
             <li>If-Then Statements</li>
-            <li>For Loops</li>
-            <li>While Loops</li>
+            <li>Loop Structures</li>
+            <li>Custom Functions</li>
         </ul>
     </div>
 </div>
@@ -225,7 +228,6 @@ sidebar_link: true
             <li>Base R - Boxplot</li>
             <li>Base R - Barchart</li>
             <li>Base R - Line Chart</li>
-            <li>Base R - Pie Chart</li>
             <li>Base R - Overplotting</li>
             <li>Base R - Multiple Plots</li>
             <li>Base R - Color by Factor</li>
@@ -244,68 +246,88 @@ sidebar_link: true
             <li>ggplot2 - geom_encircle</li>
             <li>ggplot2 - Correlations</li>
             <li>ggplot2 - Diverging Bar</li>
-            <li>ggplot2 - gg_pie</li>
             <li>ggplot2 - Pyramid</li>
         </ul>
     </div>
 </div>
 
-
 <br> 
-<br>
 
-<!--
-INSERT PYTHON SCRIPTING HERE
 
 <div style="max-height:120px; max-width:120px; margin-bottom:20px;">
-    <img src="{{ site.baseurl }}/images/profile/python.png" alt="SQL" align:"left">
-</div>	
-<hr>
--->
-
-<div style="max-height:120px; max-width:120px; margin-bottom:20px;">
-        <img src="{{ site.baseurl }}/images/profile/sql.png" alt="SQL" align:"left">
+    <img src="{{ site.baseurl }}/images/profile/normal_curve.png" alt="R Language" align:"left">
 </div>	
 <hr>
 
+<div style="text-align: center;">
+    <h3> Statistical Inference with R </h3>
+</div>
+        
 <div class="row">
     <div class="column">
         <ul> 
-            <li>
-                <a href = '{{ site.baseurl }}/sql-create-insert-alter'>Creating Data and Structure</a>
-            </li> 
-            <li>
-                <a href = '{{ site.baseurl }}/sql-drop-delete-alter'>Deleting Data and Structure</a>
-            </li>
-            <li>
-                <a href = '{{ site.baseurl }}/sql-filter-columns'>Filtering Columns</a>
-            </li>
-            <li>
-                <a href = '{{ site.baseurl }}/sql-filter-rows'>Filtering Rows</a>
-            </li>
-            <li>
-                <a href = '{{ site.baseurl }}/sql-group-by-having'>Grouping Results</a>
-            </li>
-            <li>
-                <a href = '{{ site.baseurl }}/sql-aggregate-functions'>Aggregate Functions</a>
-            </li>
-            <li>
-                <a href = '{{ site.baseurl }}/sql-resources'>More Resources</a>
-            </li>
+            <li>Z-test</li> 
+            <li>t-test</li>
+            <li>F-test</li>
+            <li>Chi-square test</li> 
+            <li>Goodness of Fit test</li>
+            <li>Wilcoxon Rank Sum test</li>
+            <li>Wilcoxon Signed Rank test</li>
         </ul>
     </div>
     <div class="column">
         <ul> 
-            <li>Union Function</li> 
-            <li>Joining Tables</li>
-            <li>Subqueries</li>
-            <li>Strings</li> 
-            <li>Dates</li>
-            <li>Null</li>
-            <li>SQL Theory</li>
+            <li>Bootstrapping</li>
+            <li>Cross Validation</li> 
+            <li>Jackknife Resampling</li>
+            <li>The Central Limit Theorem</li> 
+            <li>Probability Distributions</li>
+            <li>Statistical Significance</li>
+            <li>Statistical Power</li>
         </ul>
     </div>
 </div>
+
+
+<div style="text-align: center;">
+    <h3> Linear Regression with R </h3>
+</div>
+        
+<div class="row">
+    <div class="column">
+        <ul> 
+            <li>Assumptions</li> 
+            <li>The Model</li> 
+            <li>Diagnostics</li>
+            <li>Interpretations</li>
+        </ul>
+    </div>
+    <div class="column">
+        <ul> 
+            <li>Multiple Regression</li>
+            <li>Interactions</li> 
+            <li>Polynomials</li>
+            <li>Lack of Fit</li> 
+        </ul>
+    </div>
+</div>
+    
+<br> 
+<br>
+
+
+<!--
+Classification Tree
+- CART
+- Random Forest
+- Bag
+- Boost
+
+Unsupervized 
+- K-means clustering
+- PCA
+-->
+
 
 
 <br>
