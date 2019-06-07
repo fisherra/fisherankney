@@ -8,7 +8,7 @@ tags:
 - Data Toolbox
 ---
 
-<br> 
+<hr>
 
 ## Commands Covered
 
