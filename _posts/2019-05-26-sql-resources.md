@@ -8,7 +8,7 @@ tags:
 - Data Toolbox
 ---
 
-<br> 
+<hr>
 
 Obviously my data toolkit articles are not all encompasing, here are some more resources to help you learn SQL! WIth SQL, perhaps even moreso than other languages, you should practice learning by doing. 
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reading and writing delimited files"
+title: "Comma-Separated Value Files and R"
 categories:
   - Blog Posts
 top_tags: General

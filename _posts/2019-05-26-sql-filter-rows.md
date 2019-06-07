@@ -10,7 +10,18 @@ tags:
 
 <br> 
 
+## Commands Covered
 
+<br>
+
+- SELECT
+- FROM
+- WHERE
+- ALL / AND / ANY / etc
+
+
+
+<br> 
 ## Where Operators
 
 To select specific rows, you need to apply a bit of logic with the where statement. This is the general formatting of such a query. 

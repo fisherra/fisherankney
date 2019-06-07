@@ -8,7 +8,19 @@ tags:
 - Data Toolbox
 ---
 
-<br> 
+<hr>
+
+## Commands Covered
+
+<br>
+
+- CREATE
+- USE 
+- ALTER 
+- ADD 
+- INSERT
+
+<br>
 
 ## Creating Databases
 

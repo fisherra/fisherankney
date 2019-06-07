@@ -10,6 +10,18 @@ tags:
 
 <br> 
 
+## Commands Covered
+
+<br> 
+
+- SELECT
+- FROM
+- AS
+- CONCAT_WS
+
+<hr>
+
+
 ## Retrieving All Columns
 
 Use the `SELECT` function with the wildcard to return all columns in a table. 

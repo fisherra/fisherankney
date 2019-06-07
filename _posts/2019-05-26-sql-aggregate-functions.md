@@ -8,8 +8,20 @@ tags:
 - Data Toolbox
 ---
 
+<hr>
+
+## Commands Covered
+
 <br> 
 
+- SELECT
+- WHERE
+- GROUP BY
+- HAVING
+- ORDER BY
+- COUNT / MIN / MAX / AVG / SUM
+
+<br>
 
 ## Group By
 

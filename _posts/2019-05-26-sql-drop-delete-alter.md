@@ -8,7 +8,21 @@ tags:
 - Data Toolbox
 ---
 
+<hr> 
+
+
+## Commands Covered
+
 <br> 
+
+- DROP
+- ALTER
+- DELETE
+- WHERE
+- UPDATE
+- SET
+
+<br>
 
 ## Deleting Databases
 
@@ -58,7 +72,7 @@ DELETE FROM example_table
     start_date <= '2015-01-01'
 ```
 
-<br> 
+<br>
 
 ## Deleting Values
 
