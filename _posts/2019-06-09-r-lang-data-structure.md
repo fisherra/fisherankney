@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Data Structure"
+title: "Data Structure in R"
 categories:
   - Blog Posts
 top_tags: General

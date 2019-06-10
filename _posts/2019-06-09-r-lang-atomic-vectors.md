@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Atomic Vectors"
+title: "Atomic Vectors in R"
 categories:
   - Blog Posts
 top_tags: General
