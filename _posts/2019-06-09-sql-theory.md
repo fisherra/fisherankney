@@ -10,13 +10,14 @@ tags:
 
 <hr>
 
-## Commands Covered
+## Four Languages?
+
+<br> 
+
+## Flavors
 
 <br>
 
-- A
-- B 
-- C
-
+## NoSQL?
 
 
