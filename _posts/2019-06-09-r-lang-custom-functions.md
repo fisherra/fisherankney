@@ -10,15 +10,12 @@ tags:
 
 <hr>
 
-<br>
+Creating custom functions in R is a deep, deep rabbit hole. Here I'll just 
+show you a boiler plate example of the process. 
 
-
-
-
-
-
-
-
+This is a custom function that takes two main arguements and returns the 
+arguements pasted together as a single string. If you do not enter a second arguement, 
+the function defaults to 'default'. 
 
 <br>
 
@@ -27,7 +24,6 @@ tags:
       print(results)
     }
 
-<br>
 
     my_function('yes', 'no')
 
@@ -37,3 +33,13 @@ tags:
 
     ## [1] "yes default"
 
+
+<br>
+
+That's all for now!
+
+
+\- Fisher
+
+<br>
+<br>

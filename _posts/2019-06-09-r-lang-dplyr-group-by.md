@@ -10,6 +10,9 @@ tags:
 
 <hr>
 
+A bit more tricky, the `group_by()` function allows for custom aggregation
+in order to make other dplyr functions even more powerful. 
+
 <br>
 
     library('tidyverse')
@@ -17,7 +20,7 @@ tags:
 
 <br>
 
-#### Group By
+## Group By
 
 `summarize()` becomes extremely useful when paired with the final
 primary dplyr function, `group_by()`. `group_by()` changes the unit of
@@ -35,6 +38,8 @@ destination. Finally, `summarize()` creates a variable named delay,
 based off the mean arrival delay each observation experienced, as
 grouped by destination. The resulting data frame gives excellent insight
 into each of the 105 destinations present in the flights dataset.
+
+<br>
 
     group_by(flights, dest) %>%                       
       summarize(count = n(),                          
@@ -59,3 +64,11 @@ into each of the 105 destinations present in the flights dataset.
 
 <br  />
 
+Really take a look into `group_by()`, often it's your data wrangling solution, and you didn't
+even know it!
+
+
+\- Fisher
+
+<br>
+<br>

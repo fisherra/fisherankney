@@ -9,15 +9,15 @@ tags:
 ---
 
 <hr>
-<br>
 
-### Library
+
+## Library
 
     library('tidyverse')
 
 <br>
 
-### Iteration by Hand
+## Iteration by Hand
 
 Iteration allows you to conduct the same operation on multiple inputs
 without tediously copying-and-pasting code. To illustrate the need for
@@ -31,6 +31,8 @@ statistic on a dataset. First we’ll create a dataframe with 4 variables:
 a, b, c, and d. Each of these variables will contain 10 randomly
 generated numbers from the normal distribution using the function
 `rnorm`.
+
+<br>
 
     df <- tibble(
     a = rnorm(10),
@@ -63,6 +65,8 @@ blog post [A Roll of the
 Dice](%7B%7B%20site.baseurl%20%7D%7D/a-roll-of-the-dice).
 
 Now to compute the mean of each of the variables a-d:
+
+<br>
 
     mean(df)
 
@@ -103,7 +107,7 @@ to rescue us from all of this *work*.
 
 <br>
 
-### For Loops
+## For Loops
 
 Let’s make a for loop, and use it to calculate the mean of each of these
 variables.
@@ -157,10 +161,12 @@ to the good stuff. The reason you came here. The purrr package!
 
 <br>
 
-### Purrr Map Function
+## Purrr Map Function
 
 In our quest to find the mean of each of the four variables in `df`, we
 can use the most basic purrr function `map()`.
+
+<br>
 
     df %>% 
       map(mean)
@@ -194,6 +200,8 @@ values, but if you don’t want a generic list you can the variants of the
 Here’s what `map_dbl()` looks like when applied to our favorite
 iteration-situation.
 
+<br>
+
     df %>%
       map_dbl(mean)
 
@@ -210,6 +218,8 @@ arbitrary size, and return the words “positive”, “negative”, or “zero�
 if the elements are as such. I want this to function to be done to every
 
 First things first, let’s make the custom function!
+
+<br>
 
     # name the function 'classify_chr' with input = 'input'
     classify_chr <- function(input) {
@@ -345,6 +355,8 @@ distribution with a specific mean and standard deviation.
 
 Using the `rnorm` function, you could do something like this.
 
+<br>
+
     rnorm(10, 5, n = 1)
 
     ## [1] 16.51869
@@ -439,4 +451,11 @@ arguements is the job for `pmap`.
     ## [13]  7.5908101  6.4423399  9.2909349  8.8124667 12.9292212  8.6884592
     ## [19]  8.1997732  6.3380038
 
+<br>
+
+That's all for now!
+
+\- Fisher
+
+<br>
 <br>

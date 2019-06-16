@@ -10,11 +10,15 @@ tags:
 
 <hr>
 
+R can follow if-then statements just like any other computer programming language. However, it's advised to use vectorized calculations whenever possible, because of increased performance. The syntax is a bit strange, but you'll get used to it!
 
 <br>
 
-if statement
-------------
+## If-Then
+
+Using an if-then to take action if a condition is met: 
+
+<br>
 
     x <- 5
 
@@ -26,8 +30,12 @@ if statement
 
 <br>
 
-if else
--------
+## If-Else
+
+If-Else can be used if you want to take two deferent actions that are 
+dependent upon a condition being met, or not being met. 
+
+<br>
 
     if (x < 0) {
       print('X is negative')
@@ -39,8 +47,11 @@ if else
 
 <br>
 
-if else if
-----------
+## If-Else-If
+
+The grand finale, If-Else-If allows you to describe an unlimited number of outcomes based on an unlimited number of conditions:
+
+<br>
 
     if (x < 0) {
       print('X is negative')
@@ -51,3 +62,13 @@ if else if
     }
 
     ## [1] "X is positive"
+
+<br>
+
+That's all for now!
+
+\- Fisher
+
+<br>
+<br>
+

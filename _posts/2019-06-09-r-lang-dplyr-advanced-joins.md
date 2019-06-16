@@ -8,18 +8,22 @@ tags:
 - Data Toolbox
 ---
 
-<br>
+<hr> 
 
-Load Libraries
---------------
+This is a continuation of the dplyr basic joins post. In that data toolkit article
+I covered the most basic joins: left, right, and inner. In this section, I'll be covering 
+full, semi, and anti joins. 
+
+<br>
 
     library('tidyverse')
     library('dplyr')
 
 <br>
 
-Prepare Example Data
---------------------
+To effectively demonstrate dplyr's join functions, I'll again have to prepare some data. 
+
+<br>
 
     tib_1 <- tibble(x = 1:2, y = 2:1)
     tib_1
@@ -29,6 +33,8 @@ Prepare Example Data
     ##   <int> <int>
     ## 1     1     2
     ## 2     2     1
+
+<br>
 
     tib_2 <- tibble(x = c(1,3), a = 10, b = "a")
     tib_2
@@ -41,10 +47,13 @@ Prepare Example Data
 
 <br>
 
-#### Full Join
+## Full Join
 
 The most inclusive join of all, `full_join()` joins every observation
-from both tables, as the name suggests.
+from both tables, as the name suggests. If there is no match, the cell 
+is filled in with `NA`. 
+
+<br>
 
     full_join(tib_1, tib_2, by = "x")
 
@@ -57,13 +66,15 @@ from both tables, as the name suggests.
 
 <br>
 
-#### Semi Join
+## Semi Join
 
 The first of two filter joins, `semi_join()`, keeps all observations in
 the `x` argument that have a match in the `y` argument. In this example,
 the key is the “x” column of `tib_1`; the only row that matches in
 `tib_2` is the observation x = 1. Thus, the resulting semi\_join only
 has one observation filtered from `tib_1`.
+
+<br>
 
     semi_join(tib_1, tib_2, by = "x")
 
@@ -74,10 +85,12 @@ has one observation filtered from `tib_1`.
 
 <br>
 
-#### Anti Join
+## Anti Join
 
 `anti_join()` is the antithesis of `semi_join()`, the function only
 returns observations that are not present in the `y` dataset.
+
+<br>
 
     anti_join(tib_1, tib_2)
 
@@ -90,3 +103,11 @@ returns observations that are not present in the `y` dataset.
 
 <br>
 
+That's it for joining! Really an easy concept once you map out what exactly you're looking for. 
+
+Thanks for reading!
+
+\- Fisher
+
+<br> 
+<br>

@@ -10,21 +10,11 @@ tags:
 
 <hr>
 
-
-<br>
-
-    library('tidyverse')
-    library('dplyr')
-
-<br>
-
-### Two-Table Functions
-
 There are two types of two-table joining functions, mutating joins and
 filtering joins. Mutating joins allow you to add new variables from one
 table to matching observations in another table. these functions are
-`left_join()`, `right_join()`, `inner_join()`, and `outter_join()`.
-Filtering Joins filter observations from one table based on matched
+`left_join()`, `right_join()`, and `inner_join()`.
+Filtering joins filter observations from one table based on matched
 observations in the secondary table; these two functions are
 `semi_join()` and `anti_join()`.
 
@@ -44,7 +34,12 @@ to use the key values. Let’s get started with the most popular function,
 
 <br>
 
-#### Left Join
+    library('tidyverse')
+    library('dplyr')
+
+<br>
+
+## Left Join
 
 The `left_join()` function keeps all observations in your left table
 (argument `x`). Your primary table will never lose observations when
@@ -52,6 +47,8 @@ using left join, it will only gain additional observations from the
 right table (argument `y`) based on the defined key.
 
 Here we’ll set up a simple example tibbles -
+
+<br>
 
     tib_1 <- tibble(x = 1:2, y = 2:1)
     tib_1
@@ -61,6 +58,8 @@ Here we’ll set up a simple example tibbles -
     ##   <int> <int>
     ## 1     1     2
     ## 2     2     1
+
+<br>
 
     tib_2 <- tibble(x = c(1,3), a = 10, b = "a")
     tib_2
@@ -86,6 +85,8 @@ Here we’ll set up a simple example tibbles -
 When you don’t list a `by` argument, dplyr finds the key columns on its
 own, most of the time it’s right, but not always.
 
+<br>
+
     left_join(tib_1, tib_2)
 
     ## Joining, by = "x"
@@ -98,11 +99,13 @@ own, most of the time it’s right, but not always.
 
 <br>
 
-#### Right Join
+## Right Join
 
 The mirror image of `left_join()`, `right_join()` includes all of the
 columns in the `y` table, and adds matching observations from the `x`
 table.
+
+<br>
 
     right_join(tib_1, tib_2)
 
@@ -116,11 +119,13 @@ table.
 
 <br>
 
-#### Inner Join
+## Inner Join
 
 `inner_join()` is simple, it only includes observations that are present
 in both `x` and `y`. Every row must be present in both datasets. With
 the key `by = "x"`, only one row is present in both example tibbles.
+
+<br>
 
     inner_join(tib_1, tib_2, by = "x")
 
@@ -129,5 +134,12 @@ the key `by = "x"`, only one row is present in both example tibbles.
     ##   <dbl> <int> <dbl> <chr>
     ## 1     1     2    10 a
 
+<br>
+
+That's all for now! Check out my article on advanced joins in R for more information on this subject. 
+
+\- Fisher
+
+<br>
 <br>
 

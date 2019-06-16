@@ -10,6 +10,8 @@ tags:
 
 <hr>
 
+I don't find arrange as useful as the other dplyr functions, but in the interest of 
+posterity I'm including an example here!
 
 <br>
 
@@ -18,7 +20,7 @@ tags:
 
 <br>
 
-#### Arrange
+## Arrange
 
 Often observations within a data frame are ordered arbitrarily, or
 unproductively. `arrange()` reorders observations according to its user
@@ -54,4 +56,11 @@ all 336,776 observations sorted from latest (highest) to earliest
     ## #   minute <dbl>, time_hour <dttm>
 
 <br  />
+
+That's all for now!
+
+\- Fisher
+
+<br>
+<br>
 

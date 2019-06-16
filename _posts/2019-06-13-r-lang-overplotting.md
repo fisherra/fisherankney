@@ -10,7 +10,7 @@ tags:
 
 <hr>
 
-### points function
+## Points Function
 
     plot(1:10, type = 'o')
     points(1:10, rnorm(10,5), col = 'firebrick')
@@ -19,7 +19,7 @@ tags:
 
 <br>
 
-### lines function
+## Lines Function
 
     a <- c(5,3,6,1,5,10)
     b <- c(1,3,5,6,7,8)
@@ -31,7 +31,7 @@ tags:
 
 <br>
 
-### par function
+## Par Function
 
     plot(1:10, type = 'o')
     par(new = T)
@@ -41,16 +41,13 @@ tags:
 
 ![]({{ site.baseurl }}/images/data_toolbox/overplot-3.png)
 
-    par(new = F)
-
 <br>
 
-abline function
----------------
+## abline Function
 
-<br>
 
-### horizontal and vertical line
+Horizontal and vertical line:
+
 
     plot(1:10)
 
@@ -59,10 +56,19 @@ abline function
 
 <br>
 
-### coefficient based line
+Coefficient based line:
 
     plot(1:10)
     abline(0,1, col = 'firebrick')
 
 ![]({{ site.baseurl }}/images/data_toolbox/overplot-4.png)
 
+<br>
+
+
+That's all for now!
+
+\- Fisher
+
+<br>
+<br>

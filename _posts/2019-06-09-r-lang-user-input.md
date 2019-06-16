@@ -12,7 +12,7 @@ tags:
 
 <br>
 
-### readlines function
+## Readline
 
 sometimes you want your function / script to take user input, use
 readline() function
@@ -26,7 +26,13 @@ In the console -
 
 <br>
 
-### using readlines in a function
+## Readline Application
+
+Here's an example of how to use the `readline()` function in a custom
+function. In this example, we're prompting the user to enter a second
+arguement in order to use paste. 
+
+<br>
 
     paste_function <- function(arg_1) {
       arg_2 <- readline(prompt= "Enter what you want pasted: ")
@@ -36,6 +42,8 @@ In the console -
 
     paste_function('hello')
 
+<br> 
+
 In the console -
 
     Enter what you want pasted: , how are you?
@@ -43,11 +51,12 @@ In the console -
 
 <br>
 
-### interactive file choice
+## Interactive File Choice
 
-    file.choose()
+In my opinion, `file.choose()` is an awesome function that is very
+under-utilized.
 
-brings up your finder to browse through and select, often data, to as
+`file.choose()` brings up your finder to browse through and select, often data, to as
 input. great to use in a script you want to make easily accessable for
 others. be aware that as you create more complex scripts based on this
 data, often your restricting the input formatting, describe this in the
@@ -56,26 +65,38 @@ script.
 This script would return the first 5 rows of a dataset of your choice if
 ran.
 
+<br>
+
     data <- file.choose()
     ?head
     head(data, n = 5)
 
 <br>
 
-### source
+## Source
 
-you can run an R script without even opening it using source. do this
-from within R, often helpful if you open R in the terminal, or want to
-source a file as apart of another program.
+You can run an R script without even opening it! To do this, use the `source()` 
+function. This is an R function, not a bash function, so you must type it into
+R, not your terminal. 
 
+<br>
     source('path/to/my/script.R')
 
-The script is ran
+<br>
 
-In the console -
+The script is ran, and the results are in the console:
+
+<br>
 
     [1] output of your script here
 
-and objects are saved into your environment that were created by this
-script.
+<br>
 
+Objects from this script are saved into your environment. Very helpful!
+
+That's all for now, 
+
+\- Fisher 
+
+<br>
+<br>

@@ -10,6 +10,9 @@ tags:
 
 <hr>
 
+Another 'big five' function in dplyr, select is used in almost every
+data cleaning task I perform. 
+
 <br>
 
 
@@ -18,7 +21,7 @@ tags:
 
 <br>
 
-### Select
+## Select
 
 In a data frame with numerous variables it’s easy become overwhelmed and
 broad with analysis. `select()` reduces the number of variables in a
@@ -43,4 +46,11 @@ year, month and day.
     ## 10  2013     1     1
     ## # … with 336,766 more rows
 
+<br>
+
+Thanks for reading!
+
+\- Fisher
+
+<br> 
 <br>

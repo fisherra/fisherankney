@@ -10,6 +10,10 @@ tags:
 
 <hr>
 
+The filter function is one of the 'big five' functions that makes dplyr such a 
+powerful data wrangling package. In essence, `filter()` returns rows that
+match specific conditions. Let's check it out!
+
 <br>
 
     library('tidyverse')
@@ -17,7 +21,7 @@ tags:
 
 <br>
 
-#### Filter
+## Filter
 
 <br>
 
@@ -51,4 +55,14 @@ Day, 2013.
     ## #   origin <chr>, dest <chr>, air_time <dbl>, distance <dbl>, hour <dbl>,
     ## #   minute <dbl>, time_hour <dttm>
 
+<br> 
 
+There you go! Filter is really the easiest of dplyr functions to understand. Simple, but highly
+useful. 
+
+Thanks for reading!
+
+\- Fisher
+
+<br> 
+<br>

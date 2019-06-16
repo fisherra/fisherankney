@@ -10,10 +10,17 @@ tags:
 
 <hr>
 
+Here I'll cover for loops and while loops. While a simple concept, they are foundational 
+to getting things done while programming. 
+
 
 <br>
 
-### basic for loop
+## Simple For Loop
+
+First set a counter, or iterator, then execute a simple for loop!
+
+<br>
 
     i <- 1 
 
@@ -34,7 +41,12 @@ tags:
 
 <br>
 
-### for loops for simple assignment
+## For Loop Assignment
+
+While the above example was pretty useless, for loops can assign the results of a calculation into a calculation vector. A trick I've used many times. 
+
+
+<br>
 
     i <- 1
     ex <- vector('double', length = 10)
@@ -50,11 +62,10 @@ tags:
 
 <br>
 
-#### for loops for complex assignment
-
-you have a counter, a data vector, and an ‘save’ vector. for every
-element in the data vector, perform some function and save that output
+Let's get a bit more complex, hopefully you can start to see applications for this technique. Now, you have a counter, a data vector, and an ‘save’ vector. for every element in the data vector, perform some function and save that output
 to your save vector. report results of save vector.
+
+<br>
 
     i <- 1
     data <- 1:10
@@ -76,13 +87,11 @@ cases. Also be aware this is not vectorized, and thus not ideal in R.
 
 <br>
 
+## Basic While Loops
+
+Really just a special version of a for loop, sometimes while loops are easier to understand. 
+
 <br>
-
-while loops are a specialized for loop.
-
-<br>
-
-### basic while loop
 
     i <- 1 
 
@@ -104,7 +113,9 @@ while loops are a specialized for loop.
 
 <br>
 
-### while loops for assignment
+## While Loop for Assignment
+
+Utilizes the same fundamental idea as a for loop for assignment:
 
     i <- 1
     ex <- vector('double', length = 10)
@@ -119,6 +130,14 @@ while loops are a specialized for loop.
     ##  [1]  1  2  3  4  5  6  7  8  9 10
 
 <br>
+
+That's all for now!
+
+\- Fisher
+
+<br>
+<br>
+
 
 
 

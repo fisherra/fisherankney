@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "3D Plots in Base R"
+title: "The Stringr Package"
 categories:
   - Blog Posts
 top_tags: General
@@ -12,4 +12,4 @@ tags:
 
 
 
-## Content Coming Soon. 
+## Content Coming Soon.

@@ -10,6 +10,8 @@ tags:
 
 <hr>
 
+Quick calculations - that's the name of the game when it comes to `mutate()`. 
+
 <br>
 
     library('tidyverse')
@@ -17,7 +19,7 @@ tags:
 
 <br>
 
-#### Mutate
+## Mutate
 
 `mutate()` allows users to alter current variables and create new ones
 through various vectorized functions. In the above example the variable
@@ -26,6 +28,8 @@ by 60. The pipe function %&gt;%, is used to move the `mutate()` output
 to `select()`. The new variable, speed, is output by the `select()`
 function, along with each flight’s tail number, air time, and travel
 distance.
+
+<br>
 
     mutate(flights, speed = distance / air_time * 60) %>%
       select(tailnum, distance, air_time, speed)
@@ -46,3 +50,11 @@ distance.
     ## # … with 336,766 more rows
 
 <br  />
+
+That's all for now!
+
+\- Fisher
+
+<br>
+<br>
+
