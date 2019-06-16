@@ -10,18 +10,22 @@ tags:
 
 <hr> 
 
-<br>
+The concept of tidy data is an extremely important one. Often, we spend a lot of our time
+preparing the data to be analyzed instead of actually conducting the analysis.
+ Hadley Wickham, the creator of tidyr and the tidyverse wrote a [foundational paper](https://www.jstatsoft.org/article/view/v059i10) on the topic in 2014. I suggest giving that paper a read, then coming back to learn about tidyr. 
 
-## Load tidyr
+<br>
 
     library('tidyverse')
 
 <br> 
 
-### gather
+## Gather
 
 Often, a dataset has column names that are not the names of variables,
 but the values of variables. take `table4a` for example.
+
+<br>
 
     table4a
 
@@ -49,6 +53,8 @@ variable, the associated elements need a new column to call home. In
 this case, the values represent a number positive cases, so the `value`
 is now defined as cases.
 
+<br>
+
     table4a %>% 
       gather(`1999`, `2000`, key = "year", value = "cases")
 
@@ -62,14 +68,16 @@ is now defined as cases.
     ## 5 Brazil      2000   80488
     ## 6 China       2000  213766
 
-<br  />
+<br>
 
-### spread
+## Spread
 
 When an observation is scattered across multiple rows, variable names
 appear repeatedly as elements in a dataframe. In `table2` a single
 observation is a country in each year, but each observation is spread
 across two rows.
+
+<br>
 
     table2
 
@@ -89,7 +97,7 @@ across two rows.
     ## 11 China        2000 cases          213766
     ## 12 China        2000 population 1280428583
 
-<br  />
+<br>
 
 To tidy this data, utilize `spread()`, one of the most common functions
 in tidyr. The first argument in `spread()` is the column that contains
@@ -99,6 +107,8 @@ values. The second and final argument in `spread()` is the column that
 contains values associated with the previously defined key, the `value`
 column. In `table2` the it is the count column that contains the
 associated values.
+
+<br> 
 
     table2 %>%
     spread(key = type, value = count)
@@ -115,7 +125,7 @@ associated values.
 
 <br>
 
-Until next time, 
+Thanks for reading!
 
 \- Fisher
 

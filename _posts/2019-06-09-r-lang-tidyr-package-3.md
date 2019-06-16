@@ -10,21 +10,25 @@ tags:
 
 <hr> 
 
-<br>
+The concept of tidy data is an extremely important one. Often, we spend a lot of our time
+preparing the data to be analyzed instead of actually conducting the analysis.
+ Hadley Wickham, the creator of tidyr and the tidyverse wrote a [foundational paper](https://www.jstatsoft.org/article/view/v059i10) on the topic in 2014. I suggest giving that paper a read, then coming back to learn about tidyr. 
 
-load tidyr
-----------
+<br>
 
     library('tidyverse')
 
-<br>
+<br> 
 
-### fill
+
+## Fill
 
 When dealing with missing data, it can be the case that you know that
 missing values are supposed to be carried on from the last observation.
 Something along the line of “ditto” quotations on a sign-up sheet. In
 the tibble treatment, we see just that.
+
+<br>
 
     treatment
 
@@ -36,11 +40,15 @@ the tibble treatment, we see just that.
     ## 3 <NA>                     3        9
     ## 4 Katherine Burke          1        4
 
+<br>
+
 The function `fill()` is the perfect fix for this situation. `fill()`
 takes a set of columns where you want missing values to be replaced with
 the most recent non-missing value. Simply input the column in question
 as the argument in `fill()`, and let R do the rest. In the case of the
 tibble `treatment`, the column in question is `person`.
+
+<br>
 
     treatment %>%
       fill(person)
@@ -55,11 +63,13 @@ tibble `treatment`, the column in question is `person`.
 
 <br>
 
-### complete
+## Complete
 
 When dealing with missing data it’s often important to turn implicitly
 missing values to explicit missing values. There are two missing values
 from the stocks tibble, 4th quarter 2015 and 1st quarter 2016.
+
+<br>
 
     stocks
 
@@ -84,6 +94,8 @@ case of `stocks` we want to find all of the combinations between the
 `year` and `qtr` variable, as to fill in implicit missing variables with
 `NA`.
 
+<br>
+
     stocks %>% 
       complete(year, qtr)
 
@@ -98,7 +110,6 @@ case of `stocks` we want to find all of the combinations between the
     ## 6  2016     2   0.92
     ## 7  2016     3   0.17
     ## 8  2016     4   2.66
-
 
 <br> 
 

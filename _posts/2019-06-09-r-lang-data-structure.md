@@ -8,25 +8,22 @@ tags:
 - Data Toolbox
 ---
 
-<br>
+<hr> 
 
-A bit more confusing than the atomic vectors, data structures are built
-on top of atomic vectors. can be categorized into homogenous (containing
-all of the same atomic vector) and heterogeneous (containing different
+Data structures are a bit more complex thant their vector counterparts. Data structures are built
+on top of atomic vectors and can be categorized into homogenous (containing
+all of the same atomic vector) or heterogeneous (containing different
 types of atomic vectors).
 
-First we’ll look at homogeneous.
-
 <br>
 
-Homogeneous Structures
------------
+## Homogeneous Structures
 
-<br>
-
-### Matix
+#### Matix - 
 
 Just as you’d expect from linear algebra, matrices.
+
+<br>
 
     matrix_dbl <- matrix(c(1, 1, 1, 0), nrow = 1)
     matrix_int <- matrix(c(1L,2L, 3L, 4L, nrow = 4))
@@ -38,6 +35,8 @@ Just as you’d expect from linear algebra, matrices.
 If you try to make it homogenous, coercion rules apply, see atomic
 vector note.
 
+<br>
+
     coerced_matrix <- matrix(c(1, T, 'Seven', 5L), nrow = 1)
     coerced_matrix
 
@@ -46,9 +45,9 @@ vector note.
 
 <br>
 
-Attributes are different depending on the function you apply to it.
+Attributes are different depending on the function you apply to it. This structure is both a matrix and numeric.
 
-Is both a matrix and numeric.
+<br>
 
     is.matrix(matrix_dbl)
 
@@ -62,13 +61,18 @@ Is both a matrix and numeric.
 
 But this type of coercion wont work.
 
+<br>
+
+
     matrix_dbl == matrix_log
 
     ## Error in matrix_dbl == matrix_log: non-conformable arrays
 
 <br>
 
-But this will
+But this will!
+
+<br>
 
     sum(matrix_log) == sum(matrix_dbl)
 
@@ -88,25 +92,27 @@ But this will
 
 <br>
 
-### Array
+#### Array - 
+
+To me, these are by far the most confusing data structure in R. Arrays are multi-dimensional matrices.
+Basically they're matrices stacked on top of each other. Notice the homogeneous structure.
 
 <br>
 
-To me, these are the most confusing data structure in R. A multi
-dimensional matrix. basically stacked matrices.
+    coerced_array <- array(c(matrix_dbl, matrix_int,
+                             matrix_log, matrix_chr))
 
-<br>
-
-Notices homogeneous
-
-    coerced_array <- array(c(matrix_dbl, matrix_int, matrix_log, matrix_chr))
     is.array(coerced_array)
 
     ## [1] TRUE
 
+<br>
+
     typeof(coerced_array)
 
     ## [1] "character"
+
+<br>
 
     coerced_array
 
@@ -116,7 +122,9 @@ Notices homogeneous
 
 <br>
 
-Multi-layer
+Here you can see the multi-layer structure. 
+
+<br>
 
     multi_layer <- array(rep(matrix_dbl, 4), dim = c(1,4,3))
     multi_layer
@@ -138,7 +146,7 @@ Multi-layer
 
 <br>
 
-pulling the first row, fourth column, 3rd ‘layer’
+Let's access the first row, fourth column, 3rd ‘layer’:
 
     multi_layer[1,4,3]
 
@@ -146,32 +154,31 @@ pulling the first row, fourth column, 3rd ‘layer’
 
 <br>
 
-as you can imagine, these get complex.
+As you can imagine, these can get complex.
 
 <br>
 
-Hetrogeneous
-------------
+## Hetrogeneous
+
+#### List - 
+
+Lists are a big of an ugly catch all, retains structures and data types. Here I'll put a few different structures into a single element of a lsit. 
 
 <br>
-
-### List
-
-<br>
-
-a big of an ugly catch all, retains structures and types
-
-All to a single element in the list
 
     single_list <- list(c(matrix_dbl, matrix_int, matrix_log, matrix_chr))
     is.list(single_list)
 
     ## [1] TRUE
 
+<br>
+
     str(single_list)
 
     ## List of 1
     ##  $ : chr [1:17] "1" "1" "1" "0" ...
+
+<br>
 
     single_list
 
@@ -182,10 +189,17 @@ All to a single element in the list
 
 <br>
 
-    multi_list <- list(matrix_dbl, matrix_int, matrix_log, matrix_chr)
+You can also separate them out into different elements to retain their individual structures.
+
+<br>
+
+    multi_list <- list(matrix_dbl, matrix_int, 
+                       matrix_log, matrix_chr)
     is.list(multi_list)
 
     ## [1] TRUE
+
+<br>
 
     str(multi_list)
 
@@ -194,6 +208,8 @@ All to a single element in the list
     ##  $ : num [1:5, 1] 1 2 3 4 4
     ##  $ : logi [1:2, 1:2] TRUE TRUE TRUE FALSE
     ##  $ : chr [1:2, 1:2] "a" "a" "a" "a"
+
+<br>
 
     multi_list
 
@@ -221,27 +237,12 @@ All to a single element in the list
 
 <br>
 
-### Difference between \[\[\]\] and \[\]
 
-when using a list and other things, you might use \[\[\]\] or \[\].
-\[\[\]\] pulls the list itself, \[\] shows you whats inside.
+#### Dataframe - 
 
-see how \[\[\]\] works with a second set of indicies because now you’re
-working with that specific matrix, while \[\] does not
-
-    multi_list[[1]][1,2]
-
-    ## [1] 1
-
-    multi_list[1][1,2]
-
-    ## Error in multi_list[1][1, 2]: incorrect number of dimensions
+This is the most common data structure, and by far my favorite. 
 
 <br>
-
-### Data Frame
-
-most common data structure.
 
     df <- data.frame(a = 1:3,
                      b = c('chr_1', 'chr_2', 'chr_3'),
@@ -256,7 +257,9 @@ most common data structure.
 
 <br>
 
-renaming
+Renaming dataframe columns:
+
+<br>
 
     colnames(df) <- c('name_1', 'name_2', 'name_3', 'name_4')
     df
@@ -266,14 +269,13 @@ renaming
     ## 2      2  chr_2      2  FALSE
     ## 3      3  chr_3      1   TRUE
 
-not advised to name the rows. use the indices as unique identifiers, if
-they have names, make it a variable.
-
 <br>
 
-combining dataframes
+It is not advised to name the rows of a data frame, instead use a unique 
+column as an identifier. If you want to combine data frames, use cbind or 
+rbind:
 
-column bind
+<br>
 
     new_df <- data.frame(name_5 = c(5,5,5))
 
@@ -285,7 +287,7 @@ column bind
     ## 2      2  chr_2      2  FALSE      5
     ## 3      3  chr_3      1   TRUE      5
 
-row bind - have more observations?
+<br>
 
     new_row <- data.frame(name_1 = 4, 
                           name_2 = 'chr_4', 
@@ -303,7 +305,10 @@ row bind - have more observations?
     ## 3      3  chr_3      1   TRUE      5
     ## 4      4  chr_4      0  FALSE      5
 
-access data frame
+<br>
+
+
+Accessing dataframe information:
 
     df[1]
 
@@ -313,9 +318,13 @@ access data frame
     ## 3      3
     ## 4      4
 
+<br>
+
     df[[1]]
 
     ## [1] 1 2 3 4
+
+<br>
 
     df$name_1
 
@@ -323,7 +332,32 @@ access data frame
 
 <br>
 
+## What's the Difference Between \[\[\]\] and \[\]
+
+When using a list and other data structures, you might use \[\[\]\] or \[\].
+\[\[\]\] pulls the data and it's structure, \[\] shows you whats inside, returning
+only the data.
+
+See how \[\[\]\] works with a second set of indicies because now you’re
+working with that specific matrix, while \[\] does not
+
+<br>
+
+    multi_list[[1]][1,2]
+
+    ## [1] 1
+
+<br>
+
+    multi_list[1][1,2]
+
+    ## Error in multi_list[1][1, 2]: incorrect number of dimensions
+
+<br>
+
 Alternatively, use tibbles!
+
+<br>
 
 That's all for now,
 

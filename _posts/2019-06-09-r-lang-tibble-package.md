@@ -35,11 +35,13 @@ frame.
 
 <br>
 
-#### Printing
+## Printing
 
 Objects as a `data.frame` will print every column in the data frame.
 This behavior is rarely useful, so I’ve used the `head()` function to
 limit the output.
+
+<br>
 
     head(iris, n = 10)
 
@@ -59,6 +61,8 @@ limit the output.
 
 When an object is stored as a tibble, calling it will automatically
 limit the output to ten rows.
+
+<br>
 
     iris.tib <- as_tibble(iris)
     iris.tib
@@ -101,6 +105,8 @@ by its name.
 When using `$` within a tibble, don’t expect the partial matching
 behavior that’s found in data frames.
 
+<br>
+
     df <- data.frame(abc = 1)
     df$a
 
@@ -120,6 +126,8 @@ behavior that’s found in data frames.
 If you’re a fan of the magrittr pipe like I am, you’ll need to use the
 special character `.` to subset the tibble.
 
+<br>
+
     df <- tibble(
       x = runif(5),
       y = rnorm(5)
@@ -134,11 +142,13 @@ special character `.` to subset the tibble.
 
 <br>
 
-#### Recycling
+## Recycling
 
 My favorite from data frames is the lack of vector recycling in tibbles.
 Within data.frames, if a vector doesn’t fit the structures dimensions it
 is repeated or “recycled” until it does.
+
+<br>
 
     data.frame(a = 1:6, b = 1:2)
 
@@ -154,10 +164,19 @@ is repeated or “recycled” until it does.
 
 Tibbles don’t recycle vectors, unless they’re of length 1.
 
+<br>
+
     tibble(a = 1:6, b = 1:2)
 
     ## Tibble columns must have consistent lengths, only values of length one are recycled:
     ## * Length 2: Column `b`
     ## * Length 6: Column `a`
 
+<br>
+
+That's all for now!
+
+\- Fisher
+
+<br>
 <br>
