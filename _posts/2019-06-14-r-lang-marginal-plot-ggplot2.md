@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Cairo Package"
+title: "Marginal Plots with ggplot2"
 categories:
   - Blog Posts
 top_tags: General
@@ -10,5 +10,13 @@ tags:
 
 <hr>
 
-Cairo 
+
+
+
+
+
+
+
+
+
 

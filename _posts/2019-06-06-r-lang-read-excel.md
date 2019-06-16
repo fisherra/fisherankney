@@ -10,21 +10,29 @@ tags:
 
 <hr>
 
+Excel files are just fancy .csv's right? Well, it's a bit more complicated than that..
+
+```
+    library('readxl')
+```
+
+<br>
+
 ## Reading Excel Files
 
-Reading excel spreadsheets is most easily done through RStudio's intuitive GUI. Simply click 'Import Dataset' in the environment pane, then click 'From Excel'. There you may navigate to your file, and preview how the import options will affect your data. 
+Reading excel spreadsheets is painlessly done through RStudio's intuitive GUI. Simply click 'Import Dataset' in the environment pane, then click 'From Excel'. There you may navigate to your file, and preview how the import options will affect your data. 
 
-I recommend copying the code provided in the 'Code Preview', located in the bottom right of the import navigation. Here's what that code means. 
+I recommend copying the code provided in the 'Code Preview', located in the bottom right of the import navigation. Here's the important bit.
 
 <br>
 
 ```
-    library('readxl')  # loads the library
-    my_excel_data <- read_excel('excel.xlsx') # function creating object
-    View(dataset) # viewing the object (I don't include this)
+    my_excel_data <- read_excel('excel.xlsx') 
 ```
 
 <br>
+
+## Custom Import
 
 When tick different boxes in the navigation to customize your import, `read_excel` function changes to suit your requests. Here are some common arguments for that function. 
 
@@ -44,6 +52,8 @@ read_xls('path/to/my_data.xls',          # path to data
 
 <br> 
 
+## Excel vs .xls vs .xlsx
+
 All of the different readxl functions do basically the same thing.
 
 ```
@@ -54,16 +64,18 @@ All of the different readxl functions do basically the same thing.
 
 <br>
 
+## Reading Files Outside of the Working Directory
+
 You don't have to read files that are in your immediate working directory, or on your local computer. 
 
 ```
     my_data <- read_xls('~/local/path/to/my/file/mydata.xls')
-    my_data <- read_xls('https://github.com/tidyverse/readr/raw/master/inst/extdata/mtcars.xls')
+    my_data <- read_xls('https://online/path/to/data.xls')
 ```
 
 <br> 
 
-## Writing Excel Files
+## Writing .xlsx Files
 
 I'm not sure why you would want to write an excel file instead of a .csv, but this is how. 
 
@@ -79,7 +91,7 @@ write.xlsx(second_dataframe, file = "~/path/to/file.xlsx",
 
 <br> 
 
-That's all for now!
+That's all for now! Thanks for reading!
 
 <br>
 

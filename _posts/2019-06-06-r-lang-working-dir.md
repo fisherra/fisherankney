@@ -8,41 +8,46 @@ tags:
 - Data Toolbox
 ---
 
-
-
-
 <hr>
 
-R Files and Interface
----------------------
-
-It’s essential to understand how directories work. Here’s how you view
-your directory directly from R (similar to pwd).
+In general working directories are easy to understand, but when you're using R Markdown files, 
+things can get a bit more complicated. 
 
 <br>
 
+## R Files and Interface
+
+
+First, it’s essential to understand how directories work. Here’s how you view
+your directory directly from R (similar to pwd in the terminal).
+
+<br>
+```
     getwd()
-
+```
 <br>
 
-Here’s how you set your working directory from R.
+And here’s how you set your working directory from R.
 
+<br> 
+```
     setwd('your/directory/here')
-
-
+```
 <br>
 
-R Markdown Files
-----------------
 
-These can be more tricky. Knitr switches your working directory back
-after each chunk is run, unless you set the root.dir using knitr
+## R Markdown Files
+
+
+Here's where it gets tricky. The knitr package switches your working directory back
+after each .Rmd chunk is ran, unless you set the root.dir using knitr
 options. Here’s proof that just using `setwd()` doesn’t work. This is
 ran from inside an .rmd file.
 
-<br>
 
-In the first chunk:
+The first chunk:
+
+<br>
 ```
 getwd()
 setwd('/Users/fisher/Documents/')
@@ -56,7 +61,7 @@ getwd()
 
 <br>
 
-In the second chunk:
+The second chunk:
 
 ```
 getwd()
@@ -67,32 +72,38 @@ getwd()
 ```
 
 <br>
+<br>
 
 Instead we must use this knitr option:
 
-In the first chunk:
+<br> 
 
-    knitr::opts_knit$set(root.dir = normalizePath("/Users/fisher/")) 
-    knitr::opts_knit$get("root.dir")  
+```
+knitr::opts_knit$set(root.dir = normalizePath("/Users/fisher/")) 
+knitr::opts_knit$get("root.dir")  
+```
 
-    ## [1] "/Users/fisher"
+```
+## [1] "/Users/fisher"
+```
 
 <br> 
 
-In the second chunk:
+The second chunk:
 
-    getwd()
+```
+getwd()
+```
 
-    ## [1] "/Users/fisher"
+```
+## [1] "/Users/fisher"
+```
 
 <br>
 <br>
 
 
-That’s all for now!
-
-<br> 
-<br>
+That’s all for now! Thanks for reading!
 
 \- Fisher
 
