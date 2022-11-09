@@ -4,8 +4,8 @@ highlighter:      rouge
 
 # Setup
 title:            Fisher Ankney
-tagline:          Data Enthusiast
-description:      Data Enthusiast
+tagline:          Data-Driven Product
+description:      Data-Driven Product
 baseurl:        
 permalink:        /:title
 author:
