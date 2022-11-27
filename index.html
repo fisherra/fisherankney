@@ -13,18 +13,40 @@ sidebar_link: true
  
 <div style="text-align:center;"> 
     <p style="font-size:1.1rem; margin-bottom:30px;">
-        Hi, I'm Fisher. Welcome to my site.
+        Hi, I'm Fisher. Welcome to my personal site.
     </p>
 
     <p style="font-size:1.1rem; margin-bottom:30px;">
-        Here you'll find a collection of articles I've authored and projects that I'm working on.
-        Topics mainly focus on technical product management, data platforms, and programmatic advertising.
+        Here you'll find links to some of my various personal and professional profiles across the web, as well as
+        a collection of articles and projects that I've authored. Topics focus on technical product management, data platform, and programmatic advertising.
     </p>
 
-    <p style="font-size:1.1rem; margin-bottom:30px;">
-        I've linked a few of my various profiles from around the web and provided a contact form just in case you want to get in touch. Thanks for visiting!
+    <p style="font-size:1.1rem; margin-bottom:50px;">
+        Feel free to reach out using the contact form below.
+        Thanks for visiting!
     </p>
+
 </div>
+
+<div style="margin-bottom: 1.2rem;"><h3>Contact Me</h3></div>
+
+<div id="formkeep-embed" data-formkeep-url="https://formkeep.com/p/b01b24955cfba14478eb025bb4226b6f?embedded=1"></div>
+
+<script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+<script type="text/javascript" src="https://formkeep-production-herokuapp-com.global.ssl.fastly.net/formkeep-embed.js"></script>
+
+<!-- Get notified when the form is submitted, add your own code below: -->
+<script>
+const formkeepEmbed = document.querySelector('#formkeep-embed')
+
+formkeepEmbed.addEventListener('formkeep-embed:submitting', _event => {
+  console.log('Submitting form...')
+})
+
+formkeepEmbed.addEventListener('formkeep-embed:submitted', _event => {
+  console.log('Submitted form...')
+})
+</script>
 
 <!--<br>-->
 
