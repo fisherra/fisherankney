@@ -1,0 +1,29 @@
+---
+layout: index
+title: Contact
+sidebar_link: true
+---
+
+
+
+<div style="margin-bottom: 1.2rem;">
+    <p style="font-size:1.1rem; margin-bottom: 40px">Send me a note and let me know what's on your mind.</p>
+</div>
+
+<div id="formkeep-embed" data-formkeep-url="https://formkeep.com/p/b01b24955cfba14478eb025bb4226b6f?embedded=1"></div>
+
+<script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+<script type="text/javascript" src="https://formkeep-production-herokuapp-com.global.ssl.fastly.net/formkeep-embed.js"></script>
+
+<!-- Get notified when the form is submitted, add your own code below: -->
+<script>
+const formkeepEmbed = document.querySelector('#formkeep-embed')
+
+formkeepEmbed.addEventListener('formkeep-embed:submitting', _event => {
+  console.log('Submitting form...')
+})
+
+formkeepEmbed.addEventListener('formkeep-embed:submitted', _event => {
+  console.log('Submitted form...')
+})
+</script>
